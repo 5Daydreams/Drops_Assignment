@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using _Code;
 using UnityEngine;
 
 public class ItemGenerator : MonoBehaviour
 {
+    private List<ItemCategory> _categories; 
+
     public void DropRandomItem()
     {
         // Select Drop Category
