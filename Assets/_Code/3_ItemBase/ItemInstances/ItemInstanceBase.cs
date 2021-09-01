@@ -5,7 +5,7 @@ using UnityEngine;
 namespace _Code
 {
     [RequireComponent(typeof(SpriteRenderer))] [ExecuteAlways]
-    public class ItemInstanceBase : MonoBehaviour
+    public abstract class ItemInstanceBase : MonoBehaviour
     {
         [SerializeField] private SpriteRenderer _renderer;
         public ItemBaseData BaseData;
