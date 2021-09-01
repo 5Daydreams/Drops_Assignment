@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0a836cff7eb4de09c5c23dc9e1781f9, type: 3}
+  m_Name: Rusty Sword
+  m_EditorClassIdentifier: 
+  Name: Rusty Sword
+  Sprite: {fileID: 21300000, guid: dbbac1f4c916f5d4eb95f1e7346070a5, type: 3}
+  Stats: {fileID: 11400000, guid: da1691c6115140f419bd3a683a2b39c6, type: 2}
+  Implicit: {fileID: 11400000, guid: 3db7e2bfd70d9c64c91e3e35fa6df0d7, type: 2}

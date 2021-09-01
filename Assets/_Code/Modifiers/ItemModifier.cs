@@ -2,9 +2,8 @@
 
 namespace _Code
 {
-    public abstract class ItemModifier : ScriptableObject
+    public abstract class ItemModifier<T> : ScriptableObject where T : ItemModifierValue
     {
-        public string Name;
-        public ItemModifierValue[] ModifierValues;
+        public T[] ModifierValues;
     }
 }

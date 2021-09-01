@@ -1,7 +1,10 @@
-﻿namespace _Code
+﻿using UnityEngine;
+
+namespace _Code
 {
-    public class ImplicitModifier
+    [CreateAssetMenu(menuName = "ItemDropPool/Modifier/Implicit")]
+    public class ImplicitModifier : ItemModifier<ImplicitModifierValue>
     {
-        public ImplicitModifierValue ImplicitValue;
+        
     }
 }

@@ -1,7 +1,7 @@
 ﻿namespace _Code
 {
-    public class ExplicitModifier
+    public class ExplicitModifier : ItemModifier<ExplicitModifierValue>
     {
-        public ExplicitModifierValue ExplicitValue;
+        public string Name;
     }
 }
