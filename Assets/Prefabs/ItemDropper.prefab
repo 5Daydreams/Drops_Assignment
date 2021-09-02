@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4474086595016080266}
   - component: {fileID: 4474086595016080265}
+  - component: {fileID: 6132459589431288716}
   m_Layer: 0
   m_Name: ItemDropper
   m_TagString: Untagged
@@ -45,3 +46,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _categories:
   - {fileID: 11400000, guid: f290a9c150bed894a8a5557dca986067, type: 2}
+  - {fileID: 11400000, guid: 2416a5e5f2cab6640a0427b0bc4378f8, type: 2}
+--- !u!114 &6132459589431288716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4474086595016080267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd76f708dd1968a4393b1b07ca0aca97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
