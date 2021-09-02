@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace _Code
 {
-    public class ItemRarity
+    [Serializable] public class ItemRarity
     {
-        public Color RarityColor;
-        public int MaxModSlots;
+        public Color RarityColor = Color.white;
+        public int MaxModSlots = 0;
     }
 }

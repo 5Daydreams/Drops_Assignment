@@ -18,7 +18,8 @@ public class ItemGenerator : MonoBehaviour
         
         // Check if rolled item extends ICraftable
             // -- End for currency and quest items--
-        Instantiate(selectedInstance);
+            float noise = Mathf.PerlinNoise(Time.time*10.0f,0);
+        Instantiate(selectedInstance,this.transform.position + Vector3.right * noise ,Quaternion.identity);
 
         // Roll pre-rarity Setups (Implicit value range, Quality value range, Influence enum*)
 

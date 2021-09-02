@@ -1,6 +1,9 @@
-﻿namespace _Code.BaseTypeGroups
+﻿using UnityEngine;
+
+namespace _Code.BaseTypeGroups
 {
-    public abstract class WeaponBaseData : EquipmentBaseData
+    [CreateAssetMenu(menuName = "ItemDropPool/BaseType/Weapon", fileName = "Weapon Base")]
+    public class WeaponBaseData : EquipmentBaseData
     {
 
     }

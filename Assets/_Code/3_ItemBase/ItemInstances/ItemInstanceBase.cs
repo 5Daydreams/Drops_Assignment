@@ -20,6 +20,11 @@ namespace _Code
 
             if (_renderer.sprite == null)
             {
+                if (BaseData.Sprite == null)
+                {
+                    Debug.LogError("Item's base data does not contain a sprite");
+                    return;
+                }
                 _renderer.sprite = BaseData.Sprite;
             }
         }
