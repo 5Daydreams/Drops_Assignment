@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edcc14bae81e408baaae61f611a4a24d, type: 3}
+  m_Name: Plate Vest Base
+  m_EditorClassIdentifier: 
+  Name: Plate Vest
+  Sprite: {fileID: 21300000, guid: e493f8cae55f769459747aaa01c4bb98, type: 3}
+  EquipmentBaseStats:
+  - Label: Armour
+    AssociatedStatTag: {fileID: 11400000, guid: ec81271b844a4f740aaa363afe4ff611, type: 2}
+    AssociatedStatValue: 19

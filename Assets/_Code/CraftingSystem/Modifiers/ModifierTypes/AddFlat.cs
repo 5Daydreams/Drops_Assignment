@@ -6,10 +6,10 @@ namespace _Code.ModifierOperations
     [CreateAssetMenu(menuName = "ItemDropPool/ModifiersTypes/Add")]
     public class AddFlat : ModifierValueInfo
     {
-        public int MinFlat;
-        public int MaxFlat;
+        public float MinFlat;
+        public float MaxFlat;
         
-        public override Func<float, float, float> GetOperation()
+        public override Func<float,float,float> GetOperation()
         {
             float Increase(float a, float b)
             {
@@ -18,7 +18,6 @@ namespace _Code.ModifierOperations
 
             return Increase;
         }
-        
         
         public override float GetMinValue()
         {
