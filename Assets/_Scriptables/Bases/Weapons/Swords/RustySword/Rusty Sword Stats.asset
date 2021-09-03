@@ -12,18 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99f2ab79c69045448f86fb0fcc4138a4, type: 3}
   m_Name: Rusty Sword Stats
   m_EditorClassIdentifier: 
-  MinDamage:
-    AssociatedStat: {fileID: 11400000, guid: 1d8e0052d915d8e419969d7af1c496d6, type: 2}
+  WeaponIntStats:
+  - Label: Min Phys Dmg
+    AssociatedStatTag: {fileID: 11400000, guid: faebd683d8bcb36409927425c8893a21, type: 2}
     AssociatedStatValue: 4
-  MaxDamage:
-    AssociatedStat: {fileID: 11400000, guid: 1d8e0052d915d8e419969d7af1c496d6, type: 2}
+  - Label: Max Phys Damage
+    AssociatedStatTag: {fileID: 11400000, guid: 1d8e0052d915d8e419969d7af1c496d6, type: 2}
     AssociatedStatValue: 9
-  CriticalStrikeChance:
-    AssociatedStat: {fileID: 11400000, guid: 56995955f5f0c67469e8b2566363db32, type: 2}
-    AssociatedStatValue: 5
-  AttacksPerSecond:
-    AssociatedStat: {fileID: 11400000, guid: 161117a002d8a8b4eb1bb0ab04eed9f3, type: 2}
-    AssociatedStatValue: 1.55
-  Range:
-    AssociatedStat: {fileID: 11400000, guid: a2e22b53251d5ee4599bfc2602706185, type: 2}
+  - Label: Weapon Range
+    AssociatedStatTag: {fileID: 11400000, guid: a2e22b53251d5ee4599bfc2602706185, type: 2}
     AssociatedStatValue: 11
+  WeaponFloatStats:
+  - Label: Crit Chance
+    AssociatedStatTag: {fileID: 11400000, guid: 56995955f5f0c67469e8b2566363db32, type: 2}
+    AssociatedStatValue: 5
+  - Label: Attack Speed
+    AssociatedStatTag: {fileID: 11400000, guid: 161117a002d8a8b4eb1bb0ab04eed9f3, type: 2}
+    AssociatedStatValue: 1.55

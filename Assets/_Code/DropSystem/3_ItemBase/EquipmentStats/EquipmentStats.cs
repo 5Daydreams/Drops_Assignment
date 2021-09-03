@@ -12,7 +12,8 @@ namespace _Code
     [Serializable]
     public struct StatValue<T>
     {
-        public StatTag AssociatedStat;
+        public string Label;
+        public StatTag AssociatedStatTag;
         public T AssociatedStatValue;
     }
 }

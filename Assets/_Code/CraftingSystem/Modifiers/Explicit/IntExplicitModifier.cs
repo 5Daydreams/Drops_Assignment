@@ -3,7 +3,7 @@
 namespace _Code
 {
     [CreateAssetMenu(menuName = "ItemDropPool/Modifier/Explicit")]
-    public class ExplicitModifier : ItemModifier<ExplicitModifierValue>
+    public class IntExplicitModifier : ItemModifier<IntExplicitModifierValue,int>
     {
         public string Name;
     }

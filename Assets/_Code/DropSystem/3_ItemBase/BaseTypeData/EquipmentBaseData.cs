@@ -4,5 +4,5 @@ using _Code;
 public class EquipmentBaseData : ItemBaseData
 {
     public EquipmentStats Stats;
-    public ImplicitModifier Implicit;
+    public IntImplicitModifier intImplicit;
 }

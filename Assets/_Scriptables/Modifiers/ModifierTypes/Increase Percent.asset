@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d2c1269d5a402fa84f5294e11d5995, type: 3}
   m_Name: Increase Percent
   m_EditorClassIdentifier: 
+  MinMultiplier: 1
+  MaxMultiplier: 1.2

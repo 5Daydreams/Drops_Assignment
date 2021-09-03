@@ -9,6 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d098d1b454d46c28e194493818f198d, type: 3}
-  m_Name: PhysicalDamage
+  m_Script: {fileID: 11500000, guid: 4343d99ce85e466dacb0cabc7e6afa7d, type: 3}
+  m_Name: Added Physical Damage
   m_EditorClassIdentifier: 
+  ModifierValues:
+  - {fileID: 11400000, guid: 84347645f93e928469731c4da1114079, type: 2}
+  Name: Sharp

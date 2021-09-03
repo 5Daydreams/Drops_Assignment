@@ -1,36 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
 using _Code.ModifierOperations;
+using UnityEngine;
 
 namespace _Code
 {
-    public class EquipmentInstance : ItemInstanceBase
+    public abstract class EquipmentInstance : ItemInstanceBase
     {
         public ItemRarity Rarity;
-        public List<ExplicitModifier> ModifierPool;
-        private List<ExplicitModifierValue> RolledModValues = new List<ExplicitModifierValue>();
+        public EquipmentBaseData BaseData;
+        public List<IntExplicitModifier> ModifierPool;
+        protected List<IntExplicitModifierValue> RolledModValues = new List<IntExplicitModifierValue>();
 
-        public void RollExplicitModifierValues()
+        public void RollImplicitModifierValues()
         {
-            ExtractFromModPool();
-
-            foreach (var modValue in RolledModValues)
+            foreach (var implicitMod in BaseData.intImplicit.ModifierValues)
             {
-                return;
-                //modValue.ApplyModifier();
+                var targetStat = implicitMod.ModTargetStat;
+                // var targetStat = implicitMod.modValueInfoOperation;
             }
         }
 
-        private void ExtractFromModPool()
+        protected override void Awake()
         {
-            RolledModValues.Clear();
-            foreach (var mod in ModifierPool)
+            base.Awake();
+            SetupSpriteRenderer(BaseData);
+        }
+
+        protected override void SetupSpriteRenderer(ItemBaseData baseData)
+        {
+            if (baseData.Sprite == null)
             {
-                foreach (var modValue in mod.ModifierValues)
-                {
-                    RolledModValues.Add( modValue);
-                }
+                Debug.LogError("Base item Scriptable has no sprite associated");
+                return;   
             }
+            this._renderer.sprite = baseData.Sprite;
         }
     }
 }

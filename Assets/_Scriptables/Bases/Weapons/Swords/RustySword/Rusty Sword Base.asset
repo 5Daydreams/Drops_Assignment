@@ -15,4 +15,4 @@ MonoBehaviour:
   Name: Rusty Sword
   Sprite: {fileID: 21300000, guid: dbbac1f4c916f5d4eb95f1e7346070a5, type: 3}
   Stats: {fileID: 11400000, guid: da1691c6115140f419bd3a683a2b39c6, type: 2}
-  Implicit: {fileID: 11400000, guid: 3db7e2bfd70d9c64c91e3e35fa6df0d7, type: 2}
+  intImplicit: {fileID: 11400000, guid: 3db7e2bfd70d9c64c91e3e35fa6df0d7, type: 2}

@@ -21,7 +21,7 @@ public class ItemGenerator : MonoBehaviour
             Vector3 noiseVector = new Vector3(noisex, noisey, noisez);
             
 #if UNITY_EDITOR
-        Instantiate(selectedInstance, this.transform.position + noiseVector, Quaternion.identity, transform);
+        Instantiate(selectedInstance, this.transform.position + noiseVector, Quaternion.identity, this.transform);
 #else
         Instantiate(selectedInstance,this.transform.position + Vector3.right * noise ,Quaternion.identity);
 #endif

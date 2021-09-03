@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace _Code
 {
-    public abstract class ItemModifier<T> : ScriptableObject where T : ItemModifierValue
+    public abstract class ItemModifier<T,J> : ScriptableObject where T : ItemModifierValue<J>
     {
         public T[] ModifierValues;
     }
