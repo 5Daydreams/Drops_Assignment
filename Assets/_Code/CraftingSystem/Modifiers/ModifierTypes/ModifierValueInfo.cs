@@ -9,5 +9,6 @@ namespace _Code.ModifierOperations
 
         public abstract float GetMinValue();
         public abstract float GetMaxValue();
+        public abstract float GetRandomValueByTier(int tier);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace _Code.ModifierOperations
 {
@@ -15,7 +16,7 @@ namespace _Code.ModifierOperations
             {
                 return a + b;
             }
-
+        
             return Increase;
         }
         
@@ -27,6 +28,11 @@ namespace _Code.ModifierOperations
         public override float GetMaxValue()
         {
             return MaxFlat;
+        }
+
+        public override float GetRandomValueByTier(int tier)
+        {
+            return (int) Random.Range(MinFlat, MaxFlat + 1);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using _Code;
 using UnityEditor;
+using UnityEngine;
 
 namespace _Tools.Editor
 {
@@ -15,7 +16,7 @@ namespace _Tools.Editor
         private void OnEnable()
         {
             So = new SerializedObject(((EquipmentInstance) target).BaseData);
-            
+
             PropName = So.FindProperty("Name");
             PropEquipmentBaseStats = So.FindProperty("EquipmentBaseStats");
         }
@@ -24,21 +25,30 @@ namespace _Tools.Editor
         {
             base.OnInspectorGUI();
 
+            if (GUILayout.Button("RollImplicitModifierValues"))
+            {
+                ((EquipmentInstance)target).RollImplicitModifierValues();
+            }
+            
+
             So.Update();
 
             using (new EditorGUILayout.VerticalScope(EditorStyles.helpBox))
             {
-                EditorGUILayout.Separator();
-                using (new EditorGUILayout.HorizontalScope())
+                using (new EditorGUI.DisabledScope(true))
                 {
-                    var label = PropName.propertyPath.Replace(".AssociatedStatValue", "");
-                    EditorGUILayout.LabelField(label);
-                    EditorGUILayout.LabelField(PropName.stringValue);
+                    EditorGUILayout.Separator();
+                    using (new EditorGUILayout.HorizontalScope())
+                    {
+                        var label = PropName.propertyPath.Replace(".AssociatedStatValue", "");
+                        EditorGUILayout.LabelField(label);
+                        EditorGUILayout.LabelField(PropName.stringValue);
+                    }
+                    EditorGUILayout.Separator();
+                    EditorGUI.indentLevel += 2;
+                    EditorGUILayout.PropertyField(PropEquipmentBaseStats);
+                    EditorGUI.indentLevel -= 2;
                 }
-
-                EditorGUI.indentLevel += 2;
-                EditorGUILayout.PropertyField(PropEquipmentBaseStats);
-                EditorGUI.indentLevel -= 2;
             }
 
             So.ApplyModifiedProperties();

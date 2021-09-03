@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f2d6509c7fc4f83ba18170e4ef59e00, type: 3}
-  m_Name: Sword Implicit
+  m_Script: {fileID: 11500000, guid: bb4b7ff1eb86487186319dc0a69e055a, type: 3}
+  m_Name: Add flat Armor
   m_EditorClassIdentifier: 
   ModifierValues:
-  - {fileID: 11400000, guid: db6bc149aee48ef43a9cc14c5725e67b, type: 2}
+  - ModTargetStat: {fileID: 11400000, guid: ec81271b844a4f740aaa363afe4ff611, type: 2}
+    ModTargetStatValue: {fileID: 11400000, guid: fd20d1cc43afb084284460698d976ba0, type: 2}

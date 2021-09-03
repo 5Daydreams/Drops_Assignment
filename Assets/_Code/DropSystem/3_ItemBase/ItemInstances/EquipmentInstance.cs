@@ -5,20 +5,32 @@ using UnityEngine;
 
 namespace _Code
 {
+    [Serializable] public class ItemRarity
+    {
+        public Color RarityColor = Color.white;
+        public int MaxModSlots = 0;
+    }
+    
     public class EquipmentInstance : ItemInstanceBase
     {
-        public ItemRarity Rarity;
         public EquipmentBaseData BaseData;
-        public Modifier Implicit;
-        public List<Modifier> ModifierPool;
-        protected List<ModifierValue> RolledModValues = new List<ModifierValue>();
+        [Header("Implicits")]
+        private List<StatValue> ImplicitValues;
+        public List<ModifierHolder> ImplicitModPool;
+        
+        [Header("Explicits")]
+        public ItemRarity Rarity;
+        public List<ModifierHolder> ExplicitModPool;
+        protected List<StatValue> RolledModValues = new List<StatValue>();
 
         public void RollImplicitModifierValues()
         {
-            // var targetStat = implicitMod.ModTargetStat;
-            // var targetStat = implicitMod.modValueInfoOperation;
+            foreach (var mod in ImplicitModPool)
+            {
+                ImplicitValues = mod.RollModifierValues();
+            }
         }
-
+        
         protected override void Awake()
         {
             base.Awake();

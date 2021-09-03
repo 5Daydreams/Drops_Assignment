@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4343d99ce85e466dacb0cabc7e6afa7d, type: 3}
-  m_Name: Added Physical Damage
+  m_Script: {fileID: 11500000, guid: bb4b7ff1eb86487186319dc0a69e055a, type: 3}
+  m_Name: New Modifier Holder
   m_EditorClassIdentifier: 
   ModifierValues:
-  - {fileID: 11400000, guid: 84347645f93e928469731c4da1114079, type: 2}
-  Name: Sharp
+  - ModTargetStat: {fileID: 11400000, guid: ec81271b844a4f740aaa363afe4ff611, type: 2}
+    ModTargetStatValue: {fileID: 11400000, guid: fd20d1cc43afb084284460698d976ba0, type: 2}

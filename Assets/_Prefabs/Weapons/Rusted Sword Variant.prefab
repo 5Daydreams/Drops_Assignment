@@ -7,9 +7,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 235197782924145054, guid: da65704565614ca4da4f358ff08dcd5e, type: 3}
+      propertyPath: BaseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 4017da83b1da2da4b87ef5cc152800d3, type: 2}
     - target: {fileID: 2103576687035295184, guid: da65704565614ca4da4f358ff08dcd5e, type: 3}
       propertyPath: m_Name
-      value: Rusted Sword
+      value: Rusted Sword Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2103576687035295190, guid: da65704565614ca4da4f358ff08dcd5e, type: 3}
       propertyPath: m_RootOrder

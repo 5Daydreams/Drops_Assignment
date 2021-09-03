@@ -10,5 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38c9857955c7425db399b5c7a5cdb618, type: 3}
-  m_Name: Add Flat
+  m_Name: AddedPhysicalDamage
   m_EditorClassIdentifier: 
+  MinFlat: 1
+  MaxFlat: 4

@@ -17,4 +17,11 @@ public struct StatValue
     public string Label;
     public StatTag AssociatedStatTag;
     public float AssociatedStatValue;
+
+    public StatValue(StatTag tag, float statValue)
+    {
+        Label = "";
+        AssociatedStatTag = tag;
+        AssociatedStatValue = statValue;
+    }
 }

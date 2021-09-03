@@ -15,7 +15,7 @@ namespace _Code.ModifierOperations
             {
                 return a * b;
             }
-
+        
             return Multiply;
         }
 
@@ -27,6 +27,11 @@ namespace _Code.ModifierOperations
         public override float GetMaxValue()
         {
             return MaxMultiplier;
+        }
+
+        public override float GetRandomValueByTier(int tier)
+        {
+            throw new NotImplementedException();
         }
     }
 }
