@@ -14,10 +14,14 @@ public class ItemGenerator : MonoBehaviour
 
         // Check if rolled item extends ICraftable
             // -- End for currency and quest items--
-            float noise = Mathf.PerlinNoise(Time.time * 10.0f, 0);
+            float noisex = 2*Mathf.PerlinNoise(Time.time * 10.0f, 0) - 1;
+            float noisey = 2*Mathf.PerlinNoise(Time.time * 10.0f, Time.time * 10.0f) - 1;
+            float noisez = 2*Mathf.PerlinNoise(0, Time.time * 10.0f) - 1;
 
+            Vector3 noiseVector = new Vector3(noisex, noisey, noisez);
+            
 #if UNITY_EDITOR
-        Instantiate(selectedInstance, this.transform.position + Vector3.right * noise, Quaternion.identity, transform);
+        Instantiate(selectedInstance, this.transform.position + noiseVector, Quaternion.identity, transform);
 #else
         Instantiate(selectedInstance,this.transform.position + Vector3.right * noise ,Quaternion.identity);
 #endif

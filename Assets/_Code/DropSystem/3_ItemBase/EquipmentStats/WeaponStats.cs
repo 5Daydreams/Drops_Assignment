@@ -6,10 +6,10 @@ namespace _Code
     [CreateAssetMenu(menuName = "ItemDropPool/BaseStats/Weapon")]
     public class WeaponStats : EquipmentStats
     {
-        public int MinDamage;
-        public int MaxDamage;
-        public float CriticalStrikeChance;
-        public float AttacksPerSecond;
-        public int Range;
+        public StatValue<int> MinDamage;
+        public StatValue<int> MaxDamage;
+        public StatValue<float> CriticalStrikeChance;
+        public StatValue<float> AttacksPerSecond;
+        public StatValue<int> Range;
     }
 }

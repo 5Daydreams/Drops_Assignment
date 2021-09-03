@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3529474804794878a50db0577745b09d, type: 3}
-  m_Name: Accuracy Multiplier
+  m_Script: {fileID: 11500000, guid: 41b7ceec0f9c49459c9140f89dd99b8c, type: 3}
+  m_Name: Increased Physical Damage Value
   m_EditorClassIdentifier: 
   ModTargetStat: 0
   modValueInfoOperation: {fileID: 0}
