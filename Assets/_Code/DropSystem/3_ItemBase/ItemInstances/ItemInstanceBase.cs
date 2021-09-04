@@ -9,6 +9,8 @@ namespace _Code
     {
         [SerializeField] protected SpriteRenderer _renderer;
 
+        public abstract void DropThis();
+
         protected virtual void Awake()
         {
             Debug.LogWarning("RED FLAG: this object uses ExecuteAlways");

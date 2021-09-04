@@ -14,8 +14,9 @@ namespace _Code
     public class EquipmentInstance : ItemInstanceBase
     {
         public EquipmentBaseData BaseData;
+        
         [Header("Implicits")]
-        private List<StatValue> ImplicitValues;
+        [SerializeField] private List<StatValue> ImplicitValues;
         public List<ModifierHolder> ImplicitModPool;
         
         [Header("Explicits")]
@@ -30,7 +31,12 @@ namespace _Code
                 ImplicitValues = mod.RollModifierValues();
             }
         }
-        
+
+        public override void DropThis()
+        {
+            throw new NotImplementedException();
+        }
+
         protected override void Awake()
         {
             base.Awake();

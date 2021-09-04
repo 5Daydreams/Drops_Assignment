@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb4b7ff1eb86487186319dc0a69e055a, type: 3}
-  m_Name: New Modifier Holder
+  m_Name: Add Phys Dmg Low Tier
   m_EditorClassIdentifier: 
   ModifierValues:
-  - ModTargetStat: {fileID: 11400000, guid: ec81271b844a4f740aaa363afe4ff611, type: 2}
-    ModTargetStatValue: {fileID: 11400000, guid: fd20d1cc43afb084284460698d976ba0, type: 2}
+  - ModTargetStat: {fileID: 11400000, guid: faebd683d8bcb36409927425c8893a21, type: 2}
+    ModTargetStatValue: {fileID: 11400000, guid: bc853b711f39ec64eae787947550568c, type: 2}
+  - ModTargetStat: {fileID: 11400000, guid: 1d8e0052d915d8e419969d7af1c496d6, type: 2}
+    ModTargetStatValue: {fileID: 11400000, guid: 32180922f6de75544b9a777421b67a0e, type: 2}
