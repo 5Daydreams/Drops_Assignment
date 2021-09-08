@@ -4,7 +4,7 @@ public class PlayerStats : CharacterStats
 {
     private void Start()
     {
-        EquipmentManager.instance.onEquipmentChanged += OnEquipmentChanged;
+        // EquipmentManager.instance.onEquipmentChanged += OnEquipmentChanged;
     }
 
     void OnEquipmentChanged(Equipment newItem, Equipment oldItem)

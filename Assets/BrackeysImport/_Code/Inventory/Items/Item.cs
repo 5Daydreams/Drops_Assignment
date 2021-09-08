@@ -15,9 +15,9 @@ namespace _Code
             Debug.Log("Using the item: " + this.name);
         }
 
-        public void RemoveFromInventory()
-        {
-            Inventory.instance.Remove(this);
-        }
+        // public void RemoveFromInventory()
+        // {
+        //     Inventory.instance.Remove(this);
+        // }
     }
 }

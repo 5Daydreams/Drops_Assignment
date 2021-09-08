@@ -7,7 +7,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public static Inventory instance;
-    public List<Item> items = new List<Item>();
+    public List<InventoryItemBaseData> items = new List<InventoryItemBaseData>();
     [SerializeField] private int space;
 
     public delegate void OnItemChanged();
@@ -16,33 +16,30 @@ public class Inventory : MonoBehaviour
 
     private void Awake()
     {
-        if (instance !=null)
+        if (instance != null)
         {
             Debug.Log("Error, multiple inventories found");
             return;
         }
-        
+
         instance = this;
     }
 
-
-    public bool AddItem(Item item)
+    public bool AddItem(InventoryItemBaseData item)
     {
-        if (!item.isDefault)
+        if (items.Count >= space)
         {
-            if (items.Count >= space)
-            {
-                Debug.Log("Not enough room");
-                return false;
-            }
-            items.Add(item);
-            onItemChangedCallback?.Invoke();
+            Debug.Log("Not enough room");
+            return false;
         }
-        
+
+        items.Add(item);
+        onItemChangedCallback?.Invoke();
+
         return true;
     }
-    
-    public void Remove(Item item)
+
+    public void Remove(InventoryItemBaseData item)
     {
         if (items.Contains(item))
         {

@@ -11,8 +11,9 @@ namespace _Code
         public int MaxModSlots = 0;
     }
     
-    public class EquipmentInstance : ItemInstanceBase
+    public class EquipmentInstance : MonoBehaviour
     {
+        [SerializeField] protected MeshRenderer _renderer;
         public EquipmentBaseData BaseData;
         
         [Header("Implicits")]
@@ -31,27 +32,13 @@ namespace _Code
                 ImplicitValues = mod.RollModifierValues();
             }
         }
-
-        public override void DropThis()
+        
+        public void AddToInventory()
         {
-            throw new NotImplementedException();
-        }
-
-        protected override void Awake()
-        {
-            base.Awake();
-            SetupSpriteRenderer(BaseData);
-        }
-
-        protected override void SetupSpriteRenderer(ItemBaseData baseData)
-        {
-            if (baseData.Sprite == null)
+            if (Inventory.instance.AddItem(BaseData))
             {
-                Debug.LogError("Base item Scriptable has no sprite associated");
-                return;
+                Destroy(gameObject);
             }
-
-            this._renderer.sprite = baseData.Sprite;
         }
     }
 }

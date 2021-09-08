@@ -1,12 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using _Code.Interfaces;
 using UnityEngine;
 using UnityEngine.Events;
 
 [Serializable] [SerializeField]
-public class Interactable : MonoBehaviour, IInteract
+public class Interactable : MonoBehaviour
 {
     [SerializeField] protected float interactRadius = 3.0f;
     public Transform interactionTransform;
@@ -19,7 +18,7 @@ public class Interactable : MonoBehaviour, IInteract
     private bool isFocused = false;
     Transform player;
 
-    public virtual void Interact()
+    public void Interact()
     {
         _onInteraction.Invoke();
     }

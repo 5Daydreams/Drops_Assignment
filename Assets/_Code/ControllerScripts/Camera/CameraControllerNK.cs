@@ -13,21 +13,21 @@ namespace _Code.Camera
         [SerializeField] private float minZoom = 1.0f;
         [SerializeField] private float maxZoom = 4.0f;
         [SerializeField] private float zoomSpeed = 10.0f;
-        private float currentZoom = 10.0f;
+        private float currentZoom = 3.0f;
 
         [Header("Settings - pitch")]
         [SerializeField] private float pitchProportion = 2.0f;
         [SerializeField] private float pitch = 1.5f;
 
         [Header("Settings - Vertical Angle")] 
-        [SerializeField] private bool flipVertical = false;
+        //[SerializeField] private bool flipVertical = false;
         [SerializeField] private float pitchAngleSpeed = 30.0f;
         [SerializeField] private float minPitchAngle = 1.0f;
         [SerializeField] private float maxPitchAngle = 3.0f;
         private float currPitchAngle = 2.0f;
 
         [Header("Settings - Horizontal Angle")]
-        [SerializeField] private bool flipHorizontal = false;
+        //[SerializeField] private bool flipHorizontal = false;
         [SerializeField] private float yawSpeed = 100.0f;
         [SerializeField] private float yawSpeedMouse = 70.0f;
         private float currentYaw = 0.0f;

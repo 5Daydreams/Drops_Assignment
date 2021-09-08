@@ -5,10 +5,18 @@ using _Code.StatSystem;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "ItemDropPool/EquipmentBase")]
-public class EquipmentBaseData : ItemBaseData
+public class EquipmentBaseData : InventoryItemBaseData
 {
     // ?
     public List<StatValue> EquipmentBaseStats;
+    public EquipmentTag EquipmentSlot;
+    
+    public override void UseItem()
+    {
+        base.UseItem();
+        EquipmentManager.instance.Equip(this);
+        // RemoveFromInventory();
+    }
 }
 
 [Serializable]

@@ -54,10 +54,10 @@ public class ItemGenerator : MonoBehaviour
         // Get all categories,
         foreach (var cat in categories)
         {
-            // Within each category, Get the itemBases
-            foreach (var itemBase in cat.ItemBases)
+            // Within each category, Get the itemInstances
+            foreach (var itemInstances in cat.ItemBases)
             {
-                dropList.Add(itemBase);
+                dropList.Add(itemInstances);
             }
         }
 

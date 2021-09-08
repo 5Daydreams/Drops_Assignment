@@ -6,14 +6,14 @@ using UnityEngine.UI;
     public class InventorySlot : MonoBehaviour
     {
         public Image icon;
-        [SerializeField] private Item item;
+        [SerializeField] private InventoryItemBaseData item;
         [SerializeField] private Button removeButton;
 
-        public void AddItem(Item newItem)
+        public void AddItem(InventoryItemBaseData newItem)
         {
             item = newItem;
 
-            icon.sprite = item.icon;
+            icon.sprite = item.Icon;
             icon.enabled = true;
 
             removeButton.interactable = true;
@@ -38,7 +38,7 @@ using UnityEngine.UI;
         {
             if (item != null)
             {
-                item.UseItem();
+                // item.UseItem();
             }
             
         }
