@@ -11,6 +11,7 @@ namespace _Code
         public int MaxModSlots = 0;
     }
     
+    [RequireComponent(typeof(Interactable))]
     public class EquipmentInstance : MonoBehaviour
     {
         [SerializeField] protected MeshRenderer _renderer;
@@ -24,6 +25,11 @@ namespace _Code
         public ItemRarity Rarity;
         public List<ModifierHolder> ExplicitModPool;
         protected List<StatValue> RolledModValues = new List<StatValue>();
+
+        private void Awake()
+        {
+            GetComponent<Interactable>().HiddenInteraction.AddListener(AddToInventory);
+        }
 
         public void RollImplicitModifierValues()
         {

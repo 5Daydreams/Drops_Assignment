@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Plate Vest Base
   m_EditorClassIdentifier: 
   Name: Plate Vest
-  Sprite: {fileID: 21300000, guid: e493f8cae55f769459747aaa01c4bb98, type: 3}
+  Icon: {fileID: 21300000, guid: e493f8cae55f769459747aaa01c4bb98, type: 3}
   EquipmentBaseStats:
-  - Label: Armour
-    AssociatedStatTag: {fileID: 11400000, guid: ec81271b844a4f740aaa363afe4ff611, type: 2}
+  - AssociatedStatTag: {fileID: 11400000, guid: ec81271b844a4f740aaa363afe4ff611, type: 2}
     AssociatedStatValue: 19
+  EquipmentSlot: {fileID: 0}

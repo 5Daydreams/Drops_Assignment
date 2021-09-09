@@ -12,11 +12,18 @@ public class Interactable : MonoBehaviour
     public float InteractRadius => interactRadius;
 
     [SerializeField] private UnityEvent _onInteraction;
+    [HideInInspector] public UnityEvent HiddenInteraction;
     
     private bool hasInteractedRecently = false;
     
     private bool isFocused = false;
     Transform player;
+
+    private void Awake()
+    {
+        if (interactionTransform == null)
+            interactionTransform = transform;
+    }
 
     public void Interact()
     {
