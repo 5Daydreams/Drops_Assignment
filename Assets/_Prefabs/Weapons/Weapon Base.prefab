@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4418c433473b3b4c8cf3f2b45797643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactRadius: 3
+  interactRadius: 2
   interactionTransform: {fileID: 2103576687035295190}
   _onInteraction:
     m_PersistentCalls:
@@ -160,6 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BaseStats: {fileID: 5579029804343828436}
+  pickupFailPulse: 2
 --- !u!114 &5579029804343828436
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -31,6 +31,11 @@ namespace _Tools.Editor
             {
                 ((EquipmentStats) target).RollImplicitModifierValues();
             }
+            
+            if (GUILayout.Button("RollExplicitModifierValues"))
+            {
+                ((EquipmentStats) target).RollExplicitModifierValues();
+            }
 
             So.Update();
 

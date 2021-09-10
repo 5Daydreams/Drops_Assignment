@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edcc14bae81e408baaae61f611a4a24d, type: 3}
   m_Name: Copper Sword Base
   m_EditorClassIdentifier: 
-  Name: Copper Sword
-  Icon: {fileID: 21300000, guid: dbbac1f4c916f5d4eb95f1e7346070a5, type: 3}
   EquipmentBaseStats:
   - AssociatedStatTag: {fileID: 11400000, guid: faebd683d8bcb36409927425c8893a21, type: 2}
     AssociatedStatValue: 9
@@ -26,3 +24,4 @@ MonoBehaviour:
   - AssociatedStatTag: {fileID: 11400000, guid: a2e22b53251d5ee4599bfc2602706185, type: 2}
     AssociatedStatValue: 11
   EquipmentSlot: {fileID: 11400000, guid: d65509ddad5a2c947ab349d04dfe3196, type: 2}
+  ExplicitModPool: {fileID: 11400000, guid: 4cfeda4b123c6df4ea1ad447ba13bd4e, type: 2}

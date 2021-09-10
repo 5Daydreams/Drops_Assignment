@@ -9,29 +9,50 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
     {
         public EquipmentBaseData BaseStats;
         
+        [Header("Final Stats")]
+        [SerializeField] private List<StatValue> FinalStats;
+        
         [Header("Implicits")]
+        [SerializeField] private List<ModifierHolder> ImplicitModPool;
         [SerializeField] private List<StatValue> ImplicitValues;
-        public List<ModifierHolder> ImplicitModPool;
         
         [Header("Explicits")]
         [SerializeField] private ItemRarity Rarity;
-        [SerializeField] private List<ModifierHolder> ExplicitModPool;
-        private List<StatValue> RolledModValues = new List<StatValue>();
+        [SerializeField] private List<StatValue> ExplicitValues;
         
-        [Header("Final Stats")]
-        [SerializeField] private List<StatValue> FinalStats;
         
         public override void UseItem()
         {
             EquipmentManager.instance.Equip(this);
         }
         
-        public void RollImplicitModifierValues()
+        public void RollImplicitModifierValues() // Blessed Orb
         {
+            ImplicitValues.Clear();
             foreach (var mod in ImplicitModPool)
             {
-                ImplicitValues = mod.RollModifierValues();
+                foreach (var statValue in mod.RollModifierValues())
+                {
+                    ImplicitValues.Add(statValue);
+                }
             }
+        }
+        
+        public void RollExplicitModifierValues() // Divine Orb
+        {
+            ExplicitValues.Clear();
+            foreach (var mod in BaseStats.ExplicitModPool.Holders)
+            {
+                foreach (var statValue in mod.RollModifierValues())
+                {
+                    ExplicitValues.Add(statValue);
+                }
+            }
+        }
+
+        public void PickExplicitsFromPool()
+        {
+            
         }
     }
 }

@@ -9,4 +9,6 @@ public class EquipmentBaseData : ScriptableObject
 {
     public List<StatValue> EquipmentBaseStats;
     public EquipmentTag EquipmentSlot;
+
+    public ModifierPool ExplicitModPool;
 }
