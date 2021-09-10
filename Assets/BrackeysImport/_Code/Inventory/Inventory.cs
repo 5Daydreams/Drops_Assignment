@@ -7,8 +7,9 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public static Inventory instance;
-    public List<InventoryItemBaseData> items = new List<InventoryItemBaseData>();
+    public List<InventoryItemBase> items = new List<InventoryItemBase>();
     [SerializeField] private int space;
+    [SerializeField] private Vector3 dropOffset = Vector3.one;
 
     public delegate void OnItemChanged();
 
@@ -25,7 +26,7 @@ public class Inventory : MonoBehaviour
         instance = this;
     }
 
-    public bool AddItem(InventoryItemBaseData item)
+    public bool AddItem(InventoryItemBase item)
     {
         if (items.Count >= space)
         {
@@ -34,17 +35,42 @@ public class Inventory : MonoBehaviour
         }
 
         items.Add(item);
+        StoreAsChild(item);
         onItemChangedCallback?.Invoke();
 
         return true;
     }
 
-    public void Remove(InventoryItemBaseData item)
+    public void Remove(InventoryItemBase item)
     {
         if (items.Contains(item))
         {
             items.Remove(item);
             onItemChangedCallback?.Invoke();
         }
+    }
+    
+    public void Drop(InventoryItemBase item)
+    {
+        if (items.Contains(item))
+        {
+            ReleaseItem(item);
+            items.Remove(item);
+            onItemChangedCallback?.Invoke();
+        }
+    }
+
+    private void StoreAsChild(InventoryItemBase item)
+    {
+        item.gameObject.SetActive(false);
+        item.transform.SetParent(PlayerSingleton.instance.player.transform);
+        item.transform.localPosition = Vector3.zero; 
+    }
+
+    private void ReleaseItem(InventoryItemBase item)
+    {
+        item.transform.localPosition = dropOffset;
+        item.transform.SetParent(null);
+        item.gameObject.SetActive(true);
     }
 }

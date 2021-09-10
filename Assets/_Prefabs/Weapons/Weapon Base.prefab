@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3002253982280611443}
   - component: {fileID: 2844727416588092697}
   - component: {fileID: 235197782924145054}
+  - component: {fileID: 5579029804343828436}
   m_Layer: 0
   m_Name: Weapon Base
   m_TagString: Untagged
@@ -29,13 +30,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103576687035295184}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.38126525, y: 0.3564205, z: -0.18752544, w: 0.8321271}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 50.192, y: 44.682, z: -3.61}
 --- !u!54 &950945163653248708
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -143,6 +144,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  HiddenInteraction:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &235197782924145054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,11 +159,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df20c202198645ceac90a9c7f106b169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _renderer: {fileID: 1638990863463899994}
-  BaseData: {fileID: 11400000, guid: 149e59b33f2ece542adfc54fff5c7bd2, type: 2}
+  BaseStats: {fileID: 5579029804343828436}
+--- !u!114 &5579029804343828436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103576687035295184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bad429389e3f4314b4434a4491e19398, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Copper Sword
+  InventoryIcon: {fileID: 21300000, guid: dbbac1f4c916f5d4eb95f1e7346070a5, type: 3}
+  BaseStats: {fileID: 11400000, guid: 7ca7e4b14b838e0408a31430879c4cff, type: 2}
   ImplicitValues: []
-  ImplicitModPool: []
+  ImplicitModPool:
+  - {fileID: 11400000, guid: b326dd467bb84e141ae61d9d18008cfa, type: 2}
   Rarity:
     RarityColor: {r: 1, g: 1, b: 1, a: 1}
     MaxModSlots: 0
   ExplicitModPool: []
+  FinalStats: []

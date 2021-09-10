@@ -1,49 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData;
 using _Code.ModifierOperations;
 using UnityEngine;
 
 namespace _Code
 {
-    [Serializable] public class ItemRarity
-    {
-        public Color RarityColor = Color.white;
-        public int MaxModSlots = 0;
-    }
-    
     [RequireComponent(typeof(Interactable))]
+    [RequireComponent(typeof(Rigidbody))]
     public class EquipmentInstance : MonoBehaviour
     {
-        [SerializeField] protected MeshRenderer _renderer;
-        public EquipmentBaseData BaseData;
+        public EquipmentStats BaseStats;
+        [SerializeField] private float pickupFailPulse = 2.0f;
+        private Rigidbody body;
         
-        [Header("Implicits")]
-        [SerializeField] private List<StatValue> ImplicitValues;
-        public List<ModifierHolder> ImplicitModPool;
-        
-        [Header("Explicits")]
-        public ItemRarity Rarity;
-        public List<ModifierHolder> ExplicitModPool;
-        protected List<StatValue> RolledModValues = new List<StatValue>();
-
         private void Awake()
         {
             GetComponent<Interactable>().HiddenInteraction.AddListener(AddToInventory);
+            body = GetComponent<Rigidbody>();
         }
 
-        public void RollImplicitModifierValues()
-        {
-            foreach (var mod in ImplicitModPool)
-            {
-                ImplicitValues = mod.RollModifierValues();
-            }
-        }
-        
         public void AddToInventory()
         {
-            if (Inventory.instance.AddItem(BaseData))
+            if (!Inventory.instance.AddItem(BaseStats))
             {
-                Destroy(gameObject);
+                body.AddForce(Vector3.up* pickupFailPulse,ForceMode.Impulse);
+                body.AddTorque(Vector3.up* pickupFailPulse,ForceMode.Impulse);
             }
         }
     }

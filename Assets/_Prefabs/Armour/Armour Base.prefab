@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2774050017795186330}
   - component: {fileID: 2774050017795186327}
   - component: {fileID: 2774050017795186326}
+  - component: {fileID: 6102874303277534097}
   m_Layer: 0
   m_Name: Armour Base
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2774050017795186329}
   m_LocalRotation: {x: 0.18397048, y: 0.28538552, z: -0.4351253, w: 0.8338921}
-  m_LocalPosition: {x: -14.745, y: -1.928, z: 11.479}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -158,11 +159,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df20c202198645ceac90a9c7f106b169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _renderer: {fileID: 2774050017795186331}
-  BaseData: {fileID: 11400000, guid: af0ff6eb148fd8244a64c6748828cf8d, type: 2}
+  BaseStats: {fileID: 6102874303277534097}
+--- !u!114 &6102874303277534097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2774050017795186329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bad429389e3f4314b4434a4491e19398, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Plate Armour
+  InventoryIcon: {fileID: 21300000, guid: e493f8cae55f769459747aaa01c4bb98, type: 3}
+  BaseStats: {fileID: 11400000, guid: af0ff6eb148fd8244a64c6748828cf8d, type: 2}
   ImplicitValues: []
   ImplicitModPool: []
   Rarity:
     RarityColor: {r: 1, g: 1, b: 1, a: 1}
     MaxModSlots: 0
   ExplicitModPool: []
+  FinalStats: []

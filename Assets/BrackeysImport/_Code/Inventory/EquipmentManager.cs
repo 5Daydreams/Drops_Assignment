@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData;
 using _Code.Extensions;
 using UnityEngine;
 
@@ -9,9 +10,8 @@ using UnityEngine;
 public class EquipmentSlot
 {
     public EquipmentTag EquipmentSlotType;
-    public EquipmentBaseData EquippedItem;
+    public EquipmentStats EquippedItem;
 }
-
 
 public class EquipmentManager : MonoBehaviour
 {
@@ -23,7 +23,7 @@ public class EquipmentManager : MonoBehaviour
 
     private Inventory inventory;
 
-    public delegate void OnEquipmentChanged(EquipmentBaseData newItem, EquipmentBaseData oldItem);
+    public delegate void OnEquipmentChanged(EquipmentStats newItem, EquipmentStats oldItem);
 
     public OnEquipmentChanged onEquipmentChanged;
 
@@ -47,10 +47,10 @@ public class EquipmentManager : MonoBehaviour
         inventory = Inventory.instance;
     }
 
-    public void Equip(EquipmentBaseData newItem)
+    public void Equip(EquipmentStats newItem)
     {
         // Find the tag you want to equip the new item at;
-        EquipmentTag itemTag = newItem.EquipmentSlot;
+        EquipmentTag itemTag = newItem.BaseStats.EquipmentSlot;
 
         // Assume there might not be an empty slot of the given tag
         EquipmentSlot validSlot = null;
