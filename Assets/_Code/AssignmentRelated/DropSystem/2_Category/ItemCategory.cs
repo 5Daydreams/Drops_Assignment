@@ -6,6 +6,6 @@ namespace _Code
     [CreateAssetMenu(menuName = "ItemDropPool/Category")]
     public class ItemCategory : ScriptableObject
     {
-        public List<ItemInstanceBase> ItemBases;
+        public List<GameObject> ItemBases;
     }
 }

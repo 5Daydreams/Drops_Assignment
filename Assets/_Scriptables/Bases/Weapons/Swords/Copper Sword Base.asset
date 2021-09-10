@@ -25,4 +25,4 @@ MonoBehaviour:
     AssociatedStatValue: 1.55
   - AssociatedStatTag: {fileID: 11400000, guid: a2e22b53251d5ee4599bfc2602706185, type: 2}
     AssociatedStatValue: 11
-  EquipmentSlot: {fileID: 0}
+  EquipmentSlot: {fileID: 11400000, guid: d65509ddad5a2c947ab349d04dfe3196, type: 2}

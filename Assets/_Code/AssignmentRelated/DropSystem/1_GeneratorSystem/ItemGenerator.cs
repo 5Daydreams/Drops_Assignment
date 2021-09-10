@@ -10,16 +10,16 @@ public class ItemGenerator : MonoBehaviour
 
     public void DropRandomItem()
     {
-        ItemInstanceBase selectedInstance = GetRandomItemBase(_categories);
+        GameObject selectedInstance = GetRandomItemBase(_categories);
 
-        // Check if rolled item extends ICraftable
-            // -- End for currency and quest items--
-            float noisex = 2*Mathf.PerlinNoise(Time.time * 10.0f, 0) - 1;
-            float noisey = 2*Mathf.PerlinNoise(Time.time * 10.0f, Time.time * 10.0f) - 1;
-            float noisez = 2*Mathf.PerlinNoise(0, Time.time * 10.0f) - 1;
+        // drop items with a minor position offset
+        float noisex = 0.5f * Mathf.PerlinNoise(Time.time * 10.0f, 0) - 1;
+        float noisey = 0.5f * Mathf.PerlinNoise(Time.time * 10.0f, Time.time * 10.0f) - 1;
+        float noisez = 0.5f * Mathf.PerlinNoise(0, Time.time * 10.0f) - 1;
 
-            Vector3 noiseVector = new Vector3(noisex, noisey, noisez);
-            
+        Vector3 noiseVector = new Vector3(noisex, noisey, noisez);
+
+        
 #if UNITY_EDITOR
         Instantiate(selectedInstance, this.transform.position + noiseVector, Quaternion.identity, this.transform);
 #else
@@ -47,9 +47,9 @@ public class ItemGenerator : MonoBehaviour
         // 
     }
 
-    private ItemInstanceBase GetRandomItemBase(List<ItemCategory> categories)
+    private GameObject GetRandomItemBase(List<ItemCategory> categories)
     {
-        List<ItemInstanceBase> dropList = new List<ItemInstanceBase>();
+        List<GameObject> dropList = new List<GameObject>();
 
         // Get all categories,
         foreach (var cat in categories)

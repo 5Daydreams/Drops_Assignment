@@ -13,20 +13,16 @@ MonoBehaviour:
   m_Name: Rusted Hatchet Base
   m_EditorClassIdentifier: 
   Name: Rusted Hatchet
-  Sprite: {fileID: 21300000, guid: c5d9dc62cfbb79c4494417e43d98a776, type: 3}
+  Icon: {fileID: 21300000, guid: c5d9dc62cfbb79c4494417e43d98a776, type: 3}
   EquipmentBaseStats:
-  - Label: Min Phys
-    AssociatedStatTag: {fileID: 11400000, guid: faebd683d8bcb36409927425c8893a21, type: 2}
+  - AssociatedStatTag: {fileID: 11400000, guid: faebd683d8bcb36409927425c8893a21, type: 2}
     AssociatedStatValue: 6
-  - Label: Max Phys
-    AssociatedStatTag: {fileID: 11400000, guid: 1d8e0052d915d8e419969d7af1c496d6, type: 2}
+  - AssociatedStatTag: {fileID: 11400000, guid: 1d8e0052d915d8e419969d7af1c496d6, type: 2}
     AssociatedStatValue: 11
-  - Label: Crit Chance
-    AssociatedStatTag: {fileID: 11400000, guid: 56995955f5f0c67469e8b2566363db32, type: 2}
+  - AssociatedStatTag: {fileID: 11400000, guid: 56995955f5f0c67469e8b2566363db32, type: 2}
     AssociatedStatValue: 5
-  - Label: Attack Speed
-    AssociatedStatTag: {fileID: 11400000, guid: 161117a002d8a8b4eb1bb0ab04eed9f3, type: 2}
+  - AssociatedStatTag: {fileID: 11400000, guid: 161117a002d8a8b4eb1bb0ab04eed9f3, type: 2}
     AssociatedStatValue: 1.5
-  - Label: Weapon Range
-    AssociatedStatTag: {fileID: 11400000, guid: a2e22b53251d5ee4599bfc2602706185, type: 2}
+  - AssociatedStatTag: {fileID: 11400000, guid: a2e22b53251d5ee4599bfc2602706185, type: 2}
     AssociatedStatValue: 11
+  EquipmentSlot: {fileID: 11400000, guid: d65509ddad5a2c947ab349d04dfe3196, type: 2}

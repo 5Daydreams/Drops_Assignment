@@ -38,7 +38,7 @@ using UnityEngine.UI;
         {
             if (item != null)
             {
-                // item.UseItem();
+                item.UseItem();
             }
             
         }
