@@ -1,6 +1,4 @@
-﻿using _Code;
-using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour

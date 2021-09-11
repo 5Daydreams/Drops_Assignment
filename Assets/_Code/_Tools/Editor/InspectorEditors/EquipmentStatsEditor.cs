@@ -1,5 +1,4 @@
-﻿using _Code;
-using _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData;
+﻿using _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData;
 using UnityEditor;
 using UnityEngine;
 

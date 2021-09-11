@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO.Compression;
 using System.Linq;
 using _Code;
 using _Code.Extensions;
-using _Code.ModifierOperations;
 using _Code.StatSystem;
-using Unity.Collections;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
 {
@@ -23,13 +19,13 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
         private List<ModifierValueRange> implicitValueRanges;
         
         [Space]
-        [SerializeField] private ItemRarity Rarity;
         [SerializeField] private List<ModifierGroupInstance> CachedExplicitValues;
         private List<ModifierValueRange> explicitValueRanges;
         
         
         public override void UseItem()
         {
+            AdjustFinalValues();
             EquipmentManager.instance.Equip(this);
         }
 
@@ -55,8 +51,12 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
             CachedExplicitValues.Clear();
 
             List<ModifierGroupInstance> allExplicitModGroups = BaseStats.ExplicitModPool.GetGroupInstances();
-            int modCount = Mathf.Clamp(Rarity.GetModCountFromRarity(),1,allExplicitModGroups.Count);
-            CachedExplicitValues = allExplicitModGroups.GetRandomElements(modCount).ToList();
+            int modCount = Mathf.Clamp(Rarity.GetModCountFromRarity(),0,allExplicitModGroups.Count);
+
+            if (modCount > 0)
+            {
+                CachedExplicitValues = allExplicitModGroups.GetRandomElements(modCount).ToList();
+            }
             
             explicitValueRanges.Clear();
 
@@ -130,19 +130,6 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
                 stat.GetFinalValue();
             }
         }
-    }
-}
-
-[Serializable] 
-public class ItemRarity
-{
-    public Color RarityColor = Color.white;
-    public int MinModSlots = 0;
-    public int MaxModSlots = 2;
-
-    public int GetModCountFromRarity()
-    {
-        return Random.Range(MinModSlots, MaxModSlots + 1);
     }
 }
 

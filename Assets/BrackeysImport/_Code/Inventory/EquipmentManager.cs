@@ -1,9 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData;
-using _Code.Extensions;
 using UnityEngine;
 
 [Serializable]

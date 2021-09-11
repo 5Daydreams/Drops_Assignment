@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using _Code;
-using _Code.StatSystem;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "ItemDropPool/EquipmentBase")]

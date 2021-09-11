@@ -1,6 +1,4 @@
-﻿using System;
-
-public class PlayerStats : CharacterStats
+﻿public class PlayerStats : CharacterStats
 {
     private void Start()
     {
