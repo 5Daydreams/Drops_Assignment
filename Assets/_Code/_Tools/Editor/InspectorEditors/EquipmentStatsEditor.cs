@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace _Tools.Editor
+namespace _Code._Tools.Editor.InspectorEditors
 {
     [CanEditMultipleObjects]
     [CustomEditor(typeof(EquipmentStats))]

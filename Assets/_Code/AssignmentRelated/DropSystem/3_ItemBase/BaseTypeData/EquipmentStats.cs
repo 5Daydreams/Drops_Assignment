@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using _Code;
-using _Code.Extensions;
-using _Code.StatSystem;
+using _Code.AssignmentRelated.Modifiers.ModifierValues;
+using _Code.AssignmentRelated.StatSystem;
+using BrackeysImport._Code.Inventory;
+using FG_Toolbox.MathExtensions;
 using UnityEngine;
 
 namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
@@ -131,96 +132,96 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
             }
         }
     }
-}
 
-[Serializable]
-public class FullStatValue
-{
-    public StatTag AssociatedStatTag;
-    public bool localMod = true;
-    public float FinalValue = 0;
-    public List<float> FlatTotal = new List<float>();
-    public List<float> IncreaseMultipliers = new List<float>();
-    public List<float> MoreMultipliers = new List<float>();
-    
-    public FullStatValue() { }
-    
-    public FullStatValue(StatTag tag)
+    [Serializable]
+    public class FullStatValue
     {
-        AssociatedStatTag = tag;
-    }
+        public StatTag AssociatedStatTag;
+        public bool localMod = true;
+        public float FinalValue = 0;
+        public List<float> FlatTotal = new List<float>();
+        public List<float> IncreaseMultipliers = new List<float>();
+        public List<float> MoreMultipliers = new List<float>();
     
-    public float GetFinalValue()
-    {
-        float finalValue = 0;
-
-        float flatSum = 0;
-        foreach (var flat in FlatTotal)
+        public FullStatValue() { }
+    
+        public FullStatValue(StatTag tag)
         {
-            flatSum += flat;
+            AssociatedStatTag = tag;
         }
-
-        finalValue += flatSum;
-
-        if (flatSum < 1)
+    
+        public float GetFinalValue()
         {
-            localMod = false;
-            finalValue = 1;
-        }
+            float finalValue = 0;
+
+            float flatSum = 0;
+            foreach (var flat in FlatTotal)
+            {
+                flatSum += flat;
+            }
+
+            finalValue += flatSum;
+
+            if (flatSum < 1)
+            {
+                localMod = false;
+                finalValue = 1;
+            }
         
-        float increases = 1;
-        foreach (var incr in IncreaseMultipliers)
-        {
-            increases += incr;
-        }
+            float increases = 1;
+            foreach (var incr in IncreaseMultipliers)
+            {
+                increases += incr;
+            }
 
-        finalValue *= increases;
+            finalValue *= increases;
         
-        foreach (var more in MoreMultipliers)
-        {
-            finalValue *= more;
+            foreach (var more in MoreMultipliers)
+            {
+                finalValue *= more;
+            }
+
+            FinalValue = finalValue;
+            return finalValue;
         }
 
-        FinalValue = finalValue;
-        return finalValue;
-    }
-
-    public void TryAddModifier(StatTag tag, float statValue, ModifierOperationTag modOperation)
-    {
-        if (tag != AssociatedStatTag)
+        public void TryAddModifier(StatTag tag, float statValue, ModifierOperationTag modOperation)
         {
-            return;
-        }
-
-        switch (modOperation)
-        {
-            case ModifierOperationTag.Add:
+            if (tag != AssociatedStatTag)
             {
-                FlatTotal.Add(statValue);
                 return;
             }
-            case ModifierOperationTag.Increase:
+
+            switch (modOperation)
             {
-                IncreaseMultipliers.Add(statValue);
-                return;
-            }
-            case ModifierOperationTag.More:
-            {
-                MoreMultipliers.Add(statValue);
-                return;
+                case ModifierOperationTag.Add:
+                {
+                    FlatTotal.Add(statValue);
+                    return;
+                }
+                case ModifierOperationTag.Increase:
+                {
+                    IncreaseMultipliers.Add(statValue);
+                    return;
+                }
+                case ModifierOperationTag.More:
+                {
+                    MoreMultipliers.Add(statValue);
+                    return;
+                }
             }
         }
-    }
     
-    public void TryAddModifier(RawModifierValue mod)
-    {
-        TryAddModifier(mod.ModTargetStatTag,mod.ModValue,mod.ModOpTag);
+        public void TryAddModifier(RawModifierValue mod)
+        {
+            TryAddModifier(mod.ModTargetStatTag,mod.ModValue,mod.ModOpTag);
+        }
     }
-}
 
-public enum ModifierOperationTag
-{
-    Add,
-    Increase,
-    More
+    public enum ModifierOperationTag
+    {
+        Add,
+        Increase,
+        More
+    }
 }

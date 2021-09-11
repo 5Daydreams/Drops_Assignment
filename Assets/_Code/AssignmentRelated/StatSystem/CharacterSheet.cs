@@ -1,8 +1,12 @@
 using System.Collections.Generic;
+using _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData;
 using UnityEngine;
 
-public class CharacterSheet : MonoBehaviour
+namespace _Code.AssignmentRelated.StatSystem
 {
-    [SerializeField] private List<FullStatValue> _stats;
+    public class CharacterSheet : MonoBehaviour
+    {
+        [SerializeField] private List<FullStatValue> _stats;
 
+    }
 }

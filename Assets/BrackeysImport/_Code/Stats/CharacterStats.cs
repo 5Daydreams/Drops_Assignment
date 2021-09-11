@@ -1,48 +1,51 @@
 using UnityEngine;
 
-public class CharacterStats : MonoBehaviour
+namespace BrackeysImport._Code.Stats
 {
-    public Stat maxHealth;
-    public int currentHealth { get; private set; }
+    public class CharacterStats : MonoBehaviour
+    {
+        public Stat maxHealth;
+        public int currentHealth { get; private set; }
     
-    public Stat damage;
-    public Stat armour;
+        public Stat damage;
+        public Stat armour;
 
-    private void Awake()
-    {
-        maxHealth.BaseValue = 100;
-        currentHealth = maxHealth.BaseValue;
-    }
-
-    public void TakeDamage(int damage)
-    {
-        damage -= armour.BaseValue;
-
-        if (damage <=0)
+        private void Awake()
         {
-            damage = 0;
+            maxHealth.BaseValue = 100;
+            currentHealth = maxHealth.BaseValue;
         }
 
-
-        currentHealth -= damage;
-        Debug.Log(transform.name + " takes " + damage + " damage.");
-
-        if (currentHealth <= 0)
+        public void TakeDamage(int damage)
         {
-            Die();
-        }
-    }
+            damage -= armour.BaseValue;
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
+            if (damage <=0)
+            {
+                damage = 0;
+            }
+
+
+            currentHealth -= damage;
+            Debug.Log(transform.name + " takes " + damage + " damage.");
+
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
+        }
+
+        private void Update()
         {
-            TakeDamage(10);
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                TakeDamage(10);
+            }
         }
-    }
 
-    public virtual void Die()
-    {
-        Debug.Log("this object died : /");
+        public virtual void Die()
+        {
+            Debug.Log("this object died : /");
+        }
     }
 }

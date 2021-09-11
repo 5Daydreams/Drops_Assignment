@@ -1,15 +1,21 @@
-using UnityEngine;
-using UnityEngine.PostProcessing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using OtherAssets.Environment.PostProcessing.Editor.Attributes;
+using OtherAssets.Environment.PostProcessing.Editor.Monitors;
+using OtherAssets.Environment.PostProcessing.Editor.Utils;
+using OtherAssets.Environment.PostProcessing.Runtime;
+using OtherAssets.Environment.PostProcessing.Runtime.Models;
+using OtherAssets.Environment.PostProcessing.Runtime.Utils;
+using UnityEditor;
+using UnityEngine;
 
-namespace UnityEditor.PostProcessing
+namespace OtherAssets.Environment.PostProcessing.Editor
 {
     //[CanEditMultipleObjects]
     [CustomEditor(typeof(PostProcessingProfile))]
-    public class PostProcessingInspector : Editor
+    public class PostProcessingInspector : UnityEditor.Editor
     {
         static GUIContent s_PreviewTitle = new GUIContent("Monitors");
 

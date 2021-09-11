@@ -1,19 +1,22 @@
 using UnityEngine;
 
-public class GenerateSlantedGrid : MonoBehaviour
+namespace _Code._Tools
 {
-    [SerializeField] private Vector2Int _gridSizing;
-    [SerializeField] private float _spacingH;
-    [SerializeField] private float _spacingV;
-
-    private void OnDrawGizmosSelected()
+    public class GenerateSlantedGrid : MonoBehaviour
     {
-        for (int j = 0; j < _gridSizing.y; j++)
+        [SerializeField] private Vector2Int _gridSizing;
+        [SerializeField] private float _spacingH;
+        [SerializeField] private float _spacingV;
+
+        private void OnDrawGizmosSelected()
         {
-            for (int i = 0; i < _gridSizing.x; i++)
+            for (int j = 0; j < _gridSizing.y; j++)
             {
-                Vector3 position = new Vector3(i * _spacingH + j%2 * _spacingV/2, j * _spacingV, 0.0f);
-                Gizmos.DrawCube(position, Vector3.one);
+                for (int i = 0; i < _gridSizing.x; i++)
+                {
+                    Vector3 position = new Vector3(i * _spacingH + j%2 * _spacingV/2, j * _spacingV, 0.0f);
+                    Gizmos.DrawCube(position, Vector3.one);
+                }
             }
         }
     }

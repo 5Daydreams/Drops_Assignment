@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using _Code.StatSystem;
+using _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData;
+using _Code.AssignmentRelated.StatSystem;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace _Code
+namespace _Code.AssignmentRelated.Modifiers.ModifierValues
 {
     [CreateAssetMenu(menuName = "ItemDropPool/ModifierHolder")]
     public class ModifierGroup : ScriptableObject

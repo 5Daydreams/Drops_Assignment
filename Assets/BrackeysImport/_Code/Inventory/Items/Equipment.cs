@@ -1,19 +1,21 @@
-﻿using _Code;
+﻿using _Code.AssignmentRelated.DropSystem._3_ItemBase;
 using UnityEngine;
 
-
-[CreateAssetMenu(menuName = "Inventory/Equipment")]
-public class Equipment : Item
+namespace BrackeysImport._Code.Inventory.Items
 {
-    public EquipmentTag equipSlot;
-    public int armorModifier;
-    public int damageModifier;
-
-    public override void UseItem()
+    [CreateAssetMenu(menuName = "Inventory/Equipment")]
+    public class Equipment : Item
     {
-        base.UseItem();
-        // EquipmentManager.instance.Equip(this);
-        // RemoveFromInventory();
+        public EquipmentTag equipSlot;
+        public int armorModifier;
+        public int damageModifier;
+
+        public override void UseItem()
+        {
+            base.UseItem();
+            // EquipmentManager.instance.Equip(this);
+            // RemoveFromInventory();
+        }
     }
 }
 

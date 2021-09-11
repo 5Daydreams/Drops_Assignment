@@ -1,14 +1,17 @@
 using UnityEngine;
 
-public class PlayerSingleton : MonoBehaviour
+namespace _Code.ControllerScripts
 {
-    public static PlayerSingleton instance;
+    public class PlayerSingleton : MonoBehaviour
+    {
+        public static PlayerSingleton instance;
 
-    public GameObject player;
+        public GameObject player;
     
 
-    private void Awake()
-    {
-        instance = this;
+        private void Awake()
+        {
+            instance = this;
+        }
     }
 }

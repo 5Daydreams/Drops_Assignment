@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace _Code
+namespace BrackeysImport._Code.Inventory
 {
     public class InventoryUI : MonoBehaviour
     {

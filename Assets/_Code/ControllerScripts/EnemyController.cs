@@ -1,48 +1,51 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent))]
-public class EnemyController : MonoBehaviour
+namespace _Code.ControllerScripts
 {
-    public float lookRadius = 10.0f;
-
-
-    private Transform target;
-    private NavMeshAgent agent;
-
-
-    private void Start()
+    [RequireComponent(typeof(NavMeshAgent))]
+    public class EnemyController : MonoBehaviour
     {
-        target = PlayerSingleton.instance.player.transform;
-        agent = GetComponent<NavMeshAgent>();
-    }
+        public float lookRadius = 10.0f;
 
-    private void Update()
-    {
-        float distance = Vector3.Distance(target.position, transform.position);
-        if (distance <= lookRadius)
+
+        private Transform target;
+        private NavMeshAgent agent;
+
+
+        private void Start()
         {
-            agent.SetDestination(target.position);
+            target = PlayerSingleton.instance.player.transform;
+            agent = GetComponent<NavMeshAgent>();
+        }
 
-            if (distance <= agent.stoppingDistance)
+        private void Update()
+        {
+            float distance = Vector3.Distance(target.position, transform.position);
+            if (distance <= lookRadius)
             {
-                // attack target
-                FaceTarget();
+                agent.SetDestination(target.position);
+
+                if (distance <= agent.stoppingDistance)
+                {
+                    // attack target
+                    FaceTarget();
+                }
             }
         }
-    }
 
-    void FaceTarget()
-    {
-        Vector3 directionToTarget = (target.position - transform.position).normalized;
-        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(directionToTarget.x,0,directionToTarget.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation,lookRotation,Time.deltaTime);
-    }
+        void FaceTarget()
+        {
+            Vector3 directionToTarget = (target.position - transform.position).normalized;
+            Quaternion lookRotation = Quaternion.LookRotation(new Vector3(directionToTarget.x,0,directionToTarget.z));
+            transform.rotation = Quaternion.Slerp(transform.rotation,lookRotation,Time.deltaTime);
+        }
     
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position,lookRadius);
-        Gizmos.color = Color.white;
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position,lookRadius);
+            Gizmos.color = Color.white;
+        }
     }
 }

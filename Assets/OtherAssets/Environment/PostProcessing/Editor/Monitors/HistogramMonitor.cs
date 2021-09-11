@@ -1,8 +1,11 @@
+using OtherAssets.Environment.PostProcessing.Editor.Utils;
+using OtherAssets.Environment.PostProcessing.Runtime;
+using OtherAssets.Environment.PostProcessing.Runtime.Utils;
+using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
-using UnityEngine.PostProcessing;
 
-namespace UnityEditor.PostProcessing
+namespace OtherAssets.Environment.PostProcessing.Editor.Monitors
 {
     using HistogramMode = PostProcessingProfile.MonitorSettings.HistogramMode;
 

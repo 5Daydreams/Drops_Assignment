@@ -1,6 +1,7 @@
+using UnityEditor;
 using UnityEngine;
 
-namespace UnityEditor.PostProcessing
+namespace OtherAssets.Environment.PostProcessing.Editor.Utils
 {
     using UnityObject = Object;
 

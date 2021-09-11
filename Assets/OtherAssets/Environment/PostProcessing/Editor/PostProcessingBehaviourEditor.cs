@@ -1,11 +1,13 @@
 using System;
 using System.Linq.Expressions;
-using UnityEngine.PostProcessing;
+using OtherAssets.Environment.PostProcessing.Editor.Utils;
+using OtherAssets.Environment.PostProcessing.Runtime;
+using UnityEditor;
 
-namespace UnityEditor.PostProcessing
+namespace OtherAssets.Environment.PostProcessing.Editor
 {
     [CustomEditor(typeof(PostProcessingBehaviour))]
-    public class PostProcessingBehaviourEditor : Editor
+    public class PostProcessingBehaviourEditor : UnityEditor.Editor
     {
         SerializedProperty m_Profile;
 

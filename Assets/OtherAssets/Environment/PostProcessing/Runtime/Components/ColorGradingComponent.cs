@@ -1,4 +1,8 @@
-namespace UnityEngine.PostProcessing
+using OtherAssets.Environment.PostProcessing.Runtime.Models;
+using OtherAssets.Environment.PostProcessing.Runtime.Utils;
+using UnityEngine;
+
+namespace OtherAssets.Environment.PostProcessing.Runtime.Components
 {
     using DebugMode = BuiltinDebugViewsModel.Mode;
 

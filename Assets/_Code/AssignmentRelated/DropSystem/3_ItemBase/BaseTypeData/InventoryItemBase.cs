@@ -2,24 +2,27 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public abstract class InventoryItemBase : MonoBehaviour
+namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
 {
-    public string Name;
-    public Sprite InventoryIcon;
-    public ItemRarity Rarity;
-
-    public abstract void UseItem();
-}
-
-[Serializable] 
-public class ItemRarity
-{
-    public Color RarityColor = Color.white;
-    public int MinModSlots = 0;
-    public int MaxModSlots = 2;
-
-    public int GetModCountFromRarity()
+    public abstract class InventoryItemBase : MonoBehaviour
     {
-        return Random.Range(MinModSlots, MaxModSlots + 1);
+        public string Name;
+        public Sprite InventoryIcon;
+        public ItemRarity Rarity;
+
+        public abstract void UseItem();
+    }
+
+    [Serializable] 
+    public class ItemRarity
+    {
+        public Color RarityColor = Color.white;
+        public int MinModSlots = 0;
+        public int MaxModSlots = 2;
+
+        public int GetModCountFromRarity()
+        {
+            return Random.Range(MinModSlots, MaxModSlots + 1);
+        }
     }
 }

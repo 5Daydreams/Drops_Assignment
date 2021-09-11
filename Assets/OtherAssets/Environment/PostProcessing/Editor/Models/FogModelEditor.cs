@@ -1,6 +1,8 @@
-using UnityEngine.PostProcessing;
+using OtherAssets.Environment.PostProcessing.Editor.Attributes;
+using OtherAssets.Environment.PostProcessing.Runtime.Models;
+using UnityEditor;
 
-namespace UnityEditor.PostProcessing
+namespace OtherAssets.Environment.PostProcessing.Editor.Models
 {
     using Settings = FogModel.Settings;
 

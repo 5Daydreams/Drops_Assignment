@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace _Code.ModifierOperations
+namespace _Code.AssignmentRelated.Modifiers.ModifierTypes
 {
     [CreateAssetMenu(menuName = "ItemDropPool/ModifiersTypes/IncreasePercent")]
     public class IncreasePercent : ModifierOperationType

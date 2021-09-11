@@ -1,4 +1,7 @@
-namespace UnityEngine.PostProcessing
+using OtherAssets.Environment.PostProcessing.Runtime.Models;
+using UnityEngine;
+
+namespace OtherAssets.Environment.PostProcessing.Runtime.Components
 {
     public sealed class DitheringComponent : PostProcessingComponentRenderTexture<DitheringModel>
     {

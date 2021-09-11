@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Code
+namespace BrackeysImport._Code.Inventory.Items
 {
     [CreateAssetMenu(menuName = "Inventory/Item")]
     public class Item : ScriptableObject

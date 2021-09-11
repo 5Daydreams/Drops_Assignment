@@ -1,7 +1,9 @@
 ﻿using _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData;
+using _Code.Objects;
+using BrackeysImport._Code.Inventory;
 using UnityEngine;
 
-namespace _Code
+namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.ItemInstances
 {
     [RequireComponent(typeof(Interactable))]
     [RequireComponent(typeof(Rigidbody))]

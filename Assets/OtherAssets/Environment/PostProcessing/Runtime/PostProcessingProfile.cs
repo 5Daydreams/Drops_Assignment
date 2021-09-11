@@ -1,6 +1,8 @@
 using System;
+using OtherAssets.Environment.PostProcessing.Runtime.Models;
+using UnityEngine;
 
-namespace UnityEngine.PostProcessing
+namespace OtherAssets.Environment.PostProcessing.Runtime
 {
     public class PostProcessingProfile : ScriptableObject
     {

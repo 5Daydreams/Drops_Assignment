@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace _Code
+namespace _Code.AssignmentRelated.DropSystem._2_Category
 {
     [CreateAssetMenu(menuName = "ItemDropPool/Category")]
     public class ItemCategory : ScriptableObject

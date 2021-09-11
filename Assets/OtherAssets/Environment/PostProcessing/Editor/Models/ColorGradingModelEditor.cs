@@ -1,9 +1,13 @@
-using UnityEngine;
-using UnityEngine.PostProcessing;
 using System;
 using System.Collections.Generic;
+using OtherAssets.Environment.PostProcessing.Editor.Attributes;
+using OtherAssets.Environment.PostProcessing.Editor.PropertyDrawers;
+using OtherAssets.Environment.PostProcessing.Editor.Utils;
+using OtherAssets.Environment.PostProcessing.Runtime.Models;
+using UnityEditor;
+using UnityEngine;
 
-namespace UnityEditor.PostProcessing
+namespace OtherAssets.Environment.PostProcessing.Editor.Models
 {
     using Settings = ColorGradingModel.Settings;
     using Tonemapper = ColorGradingModel.Tonemapper;

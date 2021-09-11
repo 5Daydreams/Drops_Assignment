@@ -1,6 +1,6 @@
 using System;
 
-namespace UnityEditor.PostProcessing
+namespace OtherAssets.Environment.PostProcessing.Editor.Attributes
 {
     public class PostProcessingModelEditorAttribute : Attribute
     {

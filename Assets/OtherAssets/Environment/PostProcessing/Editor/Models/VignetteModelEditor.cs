@@ -1,7 +1,9 @@
+using OtherAssets.Environment.PostProcessing.Editor.Attributes;
+using OtherAssets.Environment.PostProcessing.Runtime.Models;
+using UnityEditor;
 using UnityEngine;
-using UnityEngine.PostProcessing;
 
-namespace UnityEditor.PostProcessing
+namespace OtherAssets.Environment.PostProcessing.Editor.Models
 {
     using VignetteMode = VignetteModel.Mode;
     using Settings = VignetteModel.Settings;

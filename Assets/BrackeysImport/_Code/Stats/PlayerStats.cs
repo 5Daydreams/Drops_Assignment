@@ -1,22 +1,27 @@
-﻿public class PlayerStats : CharacterStats
-{
-    private void Start()
-    {
-        // EquipmentManager.instance.onEquipmentChanged += OnEquipmentChanged;
-    }
+﻿using BrackeysImport._Code.Inventory.Items;
 
-    void OnEquipmentChanged(Equipment newItem, Equipment oldItem)
+namespace BrackeysImport._Code.Stats
+{
+    public class PlayerStats : CharacterStats
     {
-        if (newItem != null)
+        private void Start()
         {
-            armour.AddModifier(newItem.armorModifier);
-            damage.AddModifier(newItem.damageModifier);
+            // EquipmentManager.instance.onEquipmentChanged += OnEquipmentChanged;
         }
 
-        if (oldItem != null)
+        void OnEquipmentChanged(Equipment newItem, Equipment oldItem)
         {
-            armour.RemoveModifier(oldItem.armorModifier);
-            damage.RemoveModifier(oldItem.damageModifier);
+            if (newItem != null)
+            {
+                armour.AddModifier(newItem.armorModifier);
+                damage.AddModifier(newItem.damageModifier);
+            }
+
+            if (oldItem != null)
+            {
+                armour.RemoveModifier(oldItem.armorModifier);
+                damage.RemoveModifier(oldItem.damageModifier);
+            }
         }
     }
 }

@@ -1,11 +1,13 @@
 using System;
-using UnityEngine;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Reflection;
-using UnityEngine.PostProcessing;
+using OtherAssets.Environment.PostProcessing.Runtime;
+using OtherAssets.Environment.PostProcessing.Runtime.Attributes;
+using UnityEditor;
+using UnityEngine;
 
-namespace UnityEditor.PostProcessing
+namespace OtherAssets.Environment.PostProcessing.Editor.Utils
 {
     public static class EditorGUIHelper
     {

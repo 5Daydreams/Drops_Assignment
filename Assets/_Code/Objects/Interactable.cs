@@ -2,56 +2,59 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-[Serializable] [SerializeField]
-public class Interactable : MonoBehaviour
+namespace _Code.Objects
 {
-    [SerializeField] protected float interactRadius = 3.0f;
-    public Transform interactionTransform;
-    public float InteractRadius => interactRadius;
-
-    [SerializeField] private UnityEvent _onInteraction;
-    [HideInInspector] public UnityEvent HiddenInteraction;
-    
-    private bool hasInteractedRecently = false;
-    
-    private bool isFocused = false;
-    Transform player;
-
-    private void Awake()
+    [Serializable] [SerializeField]
+    public class Interactable : MonoBehaviour
     {
-        if (interactionTransform == null)
-            interactionTransform = transform;
-    }
+        [SerializeField] protected float interactRadius = 3.0f;
+        public Transform interactionTransform;
+        public float InteractRadius => interactRadius;
 
-    public void Interact()
-    {
-        _onInteraction.Invoke();
-    }
+        [SerializeField] private UnityEvent _onInteraction;
+        [HideInInspector] public UnityEvent HiddenInteraction;
     
-    private void Update()
-    {
-        if (isFocused && !hasInteractedRecently)
+        private bool hasInteractedRecently = false;
+    
+        private bool isFocused = false;
+        Transform player;
+
+        private void Awake()
         {
-            float distance = Vector3.Distance(player.position, interactionTransform.position);
-            if (distance <= interactRadius)
+            if (interactionTransform == null)
+                interactionTransform = transform;
+        }
+
+        public void Interact()
+        {
+            _onInteraction.Invoke();
+        }
+    
+        private void Update()
+        {
+            if (isFocused && !hasInteractedRecently)
             {
-                Interact();
-                hasInteractedRecently = true;
+                float distance = Vector3.Distance(player.position, interactionTransform.position);
+                if (distance <= interactRadius)
+                {
+                    Interact();
+                    hasInteractedRecently = true;
+                }
             }
         }
-    }
 
-    public void OnFocused(Transform playerTransform)
-    {
-        player = playerTransform;
-        isFocused = (playerTransform != null);
-        hasInteractedRecently = false;
-    }
+        public void OnFocused(Transform playerTransform)
+        {
+            player = playerTransform;
+            isFocused = (playerTransform != null);
+            hasInteractedRecently = false;
+        }
     
-    private void OnDrawGizmosSelected()
-    {
-        if (interactionTransform == null)
-            interactionTransform = this.transform;
-        Gizmos.DrawWireSphere(interactionTransform.position,interactRadius);
+        private void OnDrawGizmosSelected()
+        {
+            if (interactionTransform == null)
+                interactionTransform = this.transform;
+            Gizmos.DrawWireSphere(interactionTransform.position,interactRadius);
+        }
     }
 }

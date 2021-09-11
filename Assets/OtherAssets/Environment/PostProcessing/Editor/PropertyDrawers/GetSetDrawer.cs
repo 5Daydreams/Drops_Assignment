@@ -1,7 +1,9 @@
+using OtherAssets.Environment.PostProcessing.Editor.Utils;
+using OtherAssets.Environment.PostProcessing.Runtime.Attributes;
+using UnityEditor;
 using UnityEngine;
-using UnityEngine.PostProcessing;
 
-namespace UnityEditor.PostProcessing
+namespace OtherAssets.Environment.PostProcessing.Editor.PropertyDrawers
 {
     [CustomPropertyDrawer(typeof(GetSetAttribute))]
     sealed class GetSetDrawer : PropertyDrawer

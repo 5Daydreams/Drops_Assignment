@@ -1,32 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
 
-[Serializable]
-public class Stat
+namespace BrackeysImport._Code.Stats
 {
-    private int baseValue;
-    public int BaseValue
+    [Serializable]
+    public class Stat
     {
-        get
+        private int baseValue;
+        public int BaseValue
         {
-            int finalValue = baseValue;
-            modifiers.ForEach(x => finalValue +=x);
-            return finalValue;
+            get
+            {
+                int finalValue = baseValue;
+                modifiers.ForEach(x => finalValue +=x);
+                return finalValue;
+            }
+            set => baseValue = value;
         }
-        set => baseValue = value;
-    }
 
-    private List<int> modifiers = new List<int>();
+        private List<int> modifiers = new List<int>();
     
-    public void AddModifier(int modifier)
-    {
-        if(modifier != 0 )
-            modifiers.Add(modifier);
-    }
+        public void AddModifier(int modifier)
+        {
+            if(modifier != 0 )
+                modifiers.Add(modifier);
+        }
     
-    public void RemoveModifier(int modifier)
-    {
-        if(modifier != 0 )
-            modifiers?.Remove(modifier);
+        public void RemoveModifier(int modifier)
+        {
+            if(modifier != 0 )
+                modifiers?.Remove(modifier);
+        }
     }
 }

@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
+using _Code.AssignmentRelated.Modifiers.ModifierValues;
 using UnityEngine;
 
-namespace _Code
+namespace _Code.AssignmentRelated.Modifiers
 {
     [CreateAssetMenu(menuName = "ItemDropPool/ModifierPool")]
     public class ModifierPool : ScriptableObject

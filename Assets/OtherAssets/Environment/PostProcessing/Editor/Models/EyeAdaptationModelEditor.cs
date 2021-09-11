@@ -1,6 +1,10 @@
-using UnityEngine.PostProcessing;
+using OtherAssets.Environment.PostProcessing.Editor.Attributes;
+using OtherAssets.Environment.PostProcessing.Editor.Utils;
+using OtherAssets.Environment.PostProcessing.Runtime.Models;
+using OtherAssets.Environment.PostProcessing.Runtime.Utils;
+using UnityEditor;
 
-namespace UnityEditor.PostProcessing
+namespace OtherAssets.Environment.PostProcessing.Editor.Models
 {
     using Settings = EyeAdaptationModel.Settings;
 

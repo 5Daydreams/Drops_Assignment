@@ -1,4 +1,6 @@
-namespace UnityEngine.PostProcessing
+using UnityEngine;
+
+namespace OtherAssets.Environment.PostProcessing.Runtime.Attributes
 {
     public sealed class TrackballAttribute : PropertyAttribute
     {

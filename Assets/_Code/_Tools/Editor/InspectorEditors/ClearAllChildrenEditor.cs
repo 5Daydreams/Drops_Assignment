@@ -1,17 +1,19 @@
 using UnityEditor;
 using UnityEngine;
 
-
-[CustomEditor(typeof(ClearAllChildren))]
-public class ClearAllChildrenEditor : Editor
+namespace _Code._Tools.Editor.InspectorEditors
 {
-    public override void OnInspectorGUI()
+    [CustomEditor(typeof(ClearAllChildren))]
+    public class ClearAllChildrenEditor : UnityEditor.Editor
     {
-        base.OnInspectorGUI();
-
-        if (GUILayout.Button("Clear all children game objects"))
+        public override void OnInspectorGUI()
         {
-            ((ClearAllChildren)target).ClearAllChildrenObjects();
+            base.OnInspectorGUI();
+
+            if (GUILayout.Button("Clear all children game objects"))
+            {
+                ((ClearAllChildren)target).ClearAllChildrenObjects();
+            }
         }
     }
 }

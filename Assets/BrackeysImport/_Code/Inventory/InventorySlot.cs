@@ -1,40 +1,44 @@
-﻿using UnityEngine;
+﻿using _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData;
+using UnityEngine;
 using UnityEngine.UI;
 
-public class InventorySlot : MonoBehaviour
+namespace BrackeysImport._Code.Inventory
 {
-    public Image icon;
-    [SerializeField] private InventoryItemBase item;
-    [SerializeField] private Button removeButton;
-
-    public void AddItem(InventoryItemBase newItem)
+    public class InventorySlot : MonoBehaviour
     {
-        item = newItem;
+        public Image icon;
+        [SerializeField] private InventoryItemBase item;
+        [SerializeField] private Button removeButton;
 
-        icon.sprite = item.InventoryIcon;
-        icon.enabled = true;
-
-        removeButton.interactable = true;
-    }
-
-    public void ClearSlot()
-    {
-        icon.sprite = null;
-        icon.enabled = false;
-
-        removeButton.interactable = false;
-    }
-
-    public void OnRemoveButton()
-    {
-        Inventory.instance.Drop(item);
-    }
-
-    public void UseItem()
-    {
-        if (removeButton.interactable)
+        public void AddItem(InventoryItemBase newItem)
         {
-            item.UseItem();
+            item = newItem;
+
+            icon.sprite = item.InventoryIcon;
+            icon.enabled = true;
+
+            removeButton.interactable = true;
+        }
+
+        public void ClearSlot()
+        {
+            icon.sprite = null;
+            icon.enabled = false;
+
+            removeButton.interactable = false;
+        }
+
+        public void OnRemoveButton()
+        {
+            Inventory.instance.Drop(item);
+        }
+
+        public void UseItem()
+        {
+            if (removeButton.interactable)
+            {
+                item.UseItem();
+            }
         }
     }
 }

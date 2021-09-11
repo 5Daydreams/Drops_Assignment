@@ -2,20 +2,23 @@ using UnityEngine;
 
 #if UNITY_EDITOR
 
-public class ClearAllChildren : MonoBehaviour
+namespace _Code._Tools
 {
-    public void ClearAllChildrenObjects()
+    public class ClearAllChildren : MonoBehaviour
     {
-        if (transform.childCount == 0)
+        public void ClearAllChildrenObjects()
         {
-            Debug.Log("No children found");
-            return;
-        }
+            if (transform.childCount == 0)
+            {
+                Debug.Log("No children found");
+                return;
+            }
         
-        for (int i = this.transform.childCount - 1; i >= 0; i--)
-        {
-            GameObject child = this.transform.GetChild(i).gameObject;
-            DestroyImmediate(child);
+            for (int i = this.transform.childCount - 1; i >= 0; i--)
+            {
+                GameObject child = this.transform.GetChild(i).gameObject;
+                DestroyImmediate(child);
+            }
         }
     }
 }
