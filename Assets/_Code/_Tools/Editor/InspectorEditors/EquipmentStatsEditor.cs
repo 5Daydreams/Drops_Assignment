@@ -26,6 +26,11 @@ namespace _Code._Tools.Editor.InspectorEditors
         {
             base.OnInspectorGUI();
 
+            if (GUILayout.Button("RerollItemRarity"))
+            {
+                ((EquipmentStats) target).RerollItemRarity();
+            }
+            
             if (GUILayout.Button("GetNewImplicitModifiers"))
             {
                 ((EquipmentStats) target).GetNewImplicitModifiers();
@@ -45,26 +50,6 @@ namespace _Code._Tools.Editor.InspectorEditors
             {
                 ((EquipmentStats) target).RerollExplicitModifierValues();
             }
-
-            // So.Update();
-            //
-            // using (new EditorGUILayout.VerticalScope(EditorStyles.helpBox))
-            // {
-            //     EditorGUILayout.Separator();
-            //     using (new EditorGUILayout.HorizontalScope())
-            //     {
-            //         var label = PropName.propertyPath;
-            //         EditorGUILayout.LabelField(label);
-            //         EditorGUILayout.LabelField(PropName.stringValue);
-            //     }
-            //
-            //     EditorGUILayout.Separator();
-            //     EditorGUI.indentLevel += 2;
-            //     EditorGUILayout.PropertyField(PropEquipmentBaseStats);
-            //     EditorGUI.indentLevel -= 2;
-            // }
-            //
-            // So.ApplyModifiedProperties();
         }
     }
 }

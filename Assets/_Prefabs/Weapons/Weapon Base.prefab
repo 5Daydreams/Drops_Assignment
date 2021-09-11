@@ -175,11 +175,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Copper Sword
   InventoryIcon: {fileID: 21300000, guid: dbbac1f4c916f5d4eb95f1e7346070a5, type: 3}
+  RarityPoolGroup: {fileID: 11400000, guid: 3501b7b040d0a6744a387a3fbd8bb8ef, type: 2}
+  CurrentRarity:
+    RarityColor: {r: 1, g: 1, b: 1, a: 1}
+    MinModSlots: 0
+    MaxModSlots: 2
   BaseStats: {fileID: 11400000, guid: 7ca7e4b14b838e0408a31430879c4cff, type: 2}
   FinalStats: []
   ImplicitModPool: []
-  Rarity:
-    RarityColor: {r: 1, g: 1, b: 1, a: 1}
-    MinModSlots: 0
-    MaxModSlots: 0
   CachedExplicitValues: []

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Armour
   m_EditorClassIdentifier: 
   ItemBases:
-  - {fileID: 645072519470918323, guid: fa98b9bb5779a5a4fb342bb7d18ae70d, type: 3}
+  - {fileID: 8808308711970881467, guid: fa98b9bb5779a5a4fb342bb7d18ae70d, type: 3}

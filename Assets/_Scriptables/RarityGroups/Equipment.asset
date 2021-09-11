@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9774234b1188430f9721e7fcf46cf80b, type: 3}
+  m_Name: Equipment
+  m_EditorClassIdentifier: 
+  RarityTiers:
+  - RarityColor: {r: 1, g: 1, b: 1, a: 1}
+    MinModSlots: 0
+    MaxModSlots: 0
+  - RarityColor: {r: 0.3254717, g: 1, b: 0.35457048, a: 1}
+    MinModSlots: 1
+    MaxModSlots: 2
+  - RarityColor: {r: 0.25943398, g: 0.6133173, b: 1, a: 1}
+    MinModSlots: 3
+    MaxModSlots: 5
+  - RarityColor: {r: 0.42414117, g: 0.25, b: 1, a: 1}
+    MinModSlots: 5
+    MaxModSlots: 7
+  - RarityColor: {r: 0.894, g: 0.58088917, b: 0.3247075, a: 1}
+    MinModSlots: 7
+    MaxModSlots: 10

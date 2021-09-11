@@ -12,18 +12,33 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
     public class EquipmentStats : InventoryItemBase
     {
         public EquipmentBaseData BaseStats;
-        
+
         [SerializeField] private List<FullStatValue> FinalStats;
-        
-        [Space]
+
+        [Space] 
         [SerializeField] private List<ModifierGroupInstance> ImplicitModPool;
-        private List<ModifierValueRange> implicitValueRanges;
-        
-        [Space]
+        private List<ModifierValueRange> implicitValueRanges = new List<ModifierValueRange>();
+
+        [Space] 
         [SerializeField] private List<ModifierGroupInstance> CachedExplicitValues;
-        private List<ModifierValueRange> explicitValueRanges;
-        
-        
+        private List<ModifierValueRange> explicitValueRanges = new List<ModifierValueRange>();
+
+
+        public override void SpawnItem(Vector3 position, Quaternion rotation, Transform parent)
+        {
+            Instantiate(this, position, rotation, parent);
+
+            RerollItemRarity();
+            GetNewImplicitModifiers();
+            GetNewExplicitModifiers();
+        }
+
+        public override void SpawnItem(Vector3 position, Quaternion rotation)
+        {
+            SpawnItem(position, rotation, null);
+        }
+
+
         public override void UseItem()
         {
             AdjustFinalValues();
@@ -32,7 +47,7 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
 
         public void RerollItemRarity()
         {
-            
+            CurrentRarity.RerollRarity(RarityPoolGroup);
         }
 
         public void GetNewImplicitModifiers() // Is this even useful??
@@ -52,13 +67,13 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
             CachedExplicitValues.Clear();
 
             List<ModifierGroupInstance> allExplicitModGroups = BaseStats.ExplicitModPool.GetGroupInstances();
-            int modCount = Mathf.Clamp(Rarity.GetModCountFromRarity(),0,allExplicitModGroups.Count);
+            int modCount = Mathf.Clamp(CurrentRarity.GetModCountFromRarity(), 0, allExplicitModGroups.Count);
 
             if (modCount > 0)
             {
                 CachedExplicitValues = allExplicitModGroups.GetRandomElements(modCount).ToList();
             }
-            
+
             explicitValueRanges.Clear();
 
             foreach (var modGroup in CachedExplicitValues)
@@ -68,7 +83,7 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
                     explicitValueRanges.Add(modGroup.ModifierValues[i]);
                 }
             }
-            
+
             RerollExplicitModifierValues();
         }
 
@@ -78,17 +93,17 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
             {
                 range.RerollValue();
             }
-            
+
             AdjustFinalValues();
         }
-        
+
         public void RerollExplicitModifierValues() // Divine Orb
         {
             foreach (var range in explicitValueRanges)
             {
                 range.RerollValue();
             }
-            
+
             AdjustFinalValues();
         }
 
@@ -114,13 +129,14 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
 
             foreach (var rawMod in rawModValues)
             {
-                FullStatValue correspondingStat = finalStatValues.Find(statValue => statValue.AssociatedStatTag == rawMod.ModTargetStatTag);
+                FullStatValue correspondingStat =
+                    finalStatValues.Find(statValue => statValue.AssociatedStatTag == rawMod.ModTargetStatTag);
                 if (correspondingStat == null)
                 {
                     correspondingStat = new FullStatValue(rawMod.ModTargetStatTag);
                     finalStatValues.Add(correspondingStat);
                 }
-                
+
                 correspondingStat.TryAddModifier(rawMod);
             }
 
@@ -142,14 +158,16 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
         public List<float> FlatTotal = new List<float>();
         public List<float> IncreaseMultipliers = new List<float>();
         public List<float> MoreMultipliers = new List<float>();
-    
-        public FullStatValue() { }
-    
+
+        public FullStatValue()
+        {
+        }
+
         public FullStatValue(StatTag tag)
         {
             AssociatedStatTag = tag;
         }
-    
+
         public float GetFinalValue()
         {
             float finalValue = 0;
@@ -167,7 +185,7 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
                 localMod = false;
                 finalValue = 1;
             }
-        
+
             float increases = 1;
             foreach (var incr in IncreaseMultipliers)
             {
@@ -175,7 +193,7 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
             }
 
             finalValue *= increases;
-        
+
             foreach (var more in MoreMultipliers)
             {
                 finalValue *= more;
@@ -211,10 +229,10 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
                 }
             }
         }
-    
+
         public void TryAddModifier(RawModifierValue mod)
         {
-            TryAddModifier(mod.ModTargetStatTag,mod.ModValue,mod.ModOpTag);
+            TryAddModifier(mod.ModTargetStatTag, mod.ModValue, mod.ModOpTag);
         }
     }
 

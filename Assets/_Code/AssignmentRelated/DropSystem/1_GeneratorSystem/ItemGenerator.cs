@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using _Code.AssignmentRelated.DropSystem._2_Category;
+using _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData;
 using FG_Toolbox.MathExtensions;
 using UnityEngine;
 
@@ -11,7 +12,7 @@ namespace _Code.AssignmentRelated.DropSystem._1_GeneratorSystem
 
         public void DropRandomItem()
         {
-            GameObject selectedInstance = GetRandomItemBase(_categories);
+            InventoryItemBase selectedInstance = GetRandomItemBase(_categories);
 
             // drop items with a minor position offset
             float noisex = 0.5f * Mathf.PerlinNoise(Time.time * 10.0f, 0);
@@ -22,7 +23,7 @@ namespace _Code.AssignmentRelated.DropSystem._1_GeneratorSystem
 
         
 #if UNITY_EDITOR
-            Instantiate(selectedInstance, this.transform.position + noiseVector, Quaternion.identity, this.transform);
+            selectedInstance.SpawnItem(this.transform.position + noiseVector, Quaternion.identity);
 #else
         Instantiate(selectedInstance,this.transform.position + Vector3.right * noise ,Quaternion.identity);
 #endif
@@ -48,9 +49,9 @@ namespace _Code.AssignmentRelated.DropSystem._1_GeneratorSystem
             // 
         }
 
-        private GameObject GetRandomItemBase(List<ItemCategory> categories)
+        private InventoryItemBase GetRandomItemBase(List<ItemCategory> categories)
         {
-            List<GameObject> dropList = new List<GameObject>();
+            List<InventoryItemBase> dropList = new List<InventoryItemBase>();
 
             // Get all categories,
             foreach (var cat in categories)

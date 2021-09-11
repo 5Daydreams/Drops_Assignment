@@ -15,6 +15,7 @@ namespace BrackeysImport._Code.Inventory
             item = newItem;
 
             icon.sprite = item.InventoryIcon;
+            icon.color = item.CurrentRarity.RarityColor;
             icon.enabled = true;
 
             removeButton.interactable = true;
