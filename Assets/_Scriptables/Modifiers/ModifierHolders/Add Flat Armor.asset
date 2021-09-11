@@ -15,5 +15,7 @@ MonoBehaviour:
   ModifierValues:
   - MinModValue: 5
     MaxModValue: 9
-    ModTargetStat: {fileID: 11400000, guid: ec81271b844a4f740aaa363afe4ff611, type: 2}
-    ModifierOperation: {fileID: 11400000, guid: fd20d1cc43afb084284460698d976ba0, type: 2}
+    ModValue:
+      ModValue: 0
+      ModTargetStatTag: {fileID: 11400000, guid: ec81271b844a4f740aaa363afe4ff611, type: 2}
+      ModOpTag: 0

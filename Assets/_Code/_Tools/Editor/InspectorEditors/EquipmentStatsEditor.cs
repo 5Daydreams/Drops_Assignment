@@ -27,14 +27,24 @@ namespace _Tools.Editor
         {
             base.OnInspectorGUI();
 
+            if (GUILayout.Button("GetNewImplicitModifiers"))
+            {
+                ((EquipmentStats) target).GetNewImplicitModifiers();
+            }
+
             if (GUILayout.Button("RollImplicitModifierValues"))
             {
-                ((EquipmentStats) target).RollImplicitModifierValues();
+                ((EquipmentStats) target).RerollImplicitModifierValues();
             }
             
+            if (GUILayout.Button("GetNewExplicitModifiers"))
+            {
+                ((EquipmentStats) target).GetNewExplicitModifiers();
+            }
+
             if (GUILayout.Button("RollExplicitModifierValues"))
             {
-                ((EquipmentStats) target).RollExplicitModifierValues();
+                ((EquipmentStats) target).RerollExplicitModifierValues();
             }
 
             // So.Update();

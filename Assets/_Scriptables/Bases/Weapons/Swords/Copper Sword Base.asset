@@ -12,16 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edcc14bae81e408baaae61f611a4a24d, type: 3}
   m_Name: Copper Sword Base
   m_EditorClassIdentifier: 
-  EquipmentBaseStats:
-  - AssociatedStatTag: {fileID: 11400000, guid: faebd683d8bcb36409927425c8893a21, type: 2}
-    AssociatedStatValue: 9
-  - AssociatedStatTag: {fileID: 11400000, guid: 1d8e0052d915d8e419969d7af1c496d6, type: 2}
-    AssociatedStatValue: 16
-  - AssociatedStatTag: {fileID: 11400000, guid: 56995955f5f0c67469e8b2566363db32, type: 2}
-    AssociatedStatValue: 5
-  - AssociatedStatTag: {fileID: 11400000, guid: 161117a002d8a8b4eb1bb0ab04eed9f3, type: 2}
-    AssociatedStatValue: 1.55
-  - AssociatedStatTag: {fileID: 11400000, guid: a2e22b53251d5ee4599bfc2602706185, type: 2}
-    AssociatedStatValue: 11
+  EquipmentLocalValues:
+  - ModValue: 4
+    ModTargetStatTag: {fileID: 11400000, guid: faebd683d8bcb36409927425c8893a21, type: 2}
+    ModOpTag: 0
+  - ModValue: 9
+    ModTargetStatTag: {fileID: 11400000, guid: 1d8e0052d915d8e419969d7af1c496d6, type: 2}
+    ModOpTag: 0
+  - ModValue: 5
+    ModTargetStatTag: {fileID: 11400000, guid: 380c381cdf57cb740bd98bbcee4bc8d0, type: 2}
+    ModOpTag: 0
+  - ModValue: 1.55
+    ModTargetStatTag: {fileID: 11400000, guid: cec7548940f996a4eb14bdd2c0f4103c, type: 2}
+    ModOpTag: 0
+  - ModValue: 11
+    ModTargetStatTag: {fileID: 11400000, guid: a2e22b53251d5ee4599bfc2602706185, type: 2}
+    ModOpTag: 0
   EquipmentSlot: {fileID: 11400000, guid: d65509ddad5a2c947ab349d04dfe3196, type: 2}
   ExplicitModPool: {fileID: 11400000, guid: 4cfeda4b123c6df4ea1ad447ba13bd4e, type: 2}

@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Increase Attack Speed
   m_EditorClassIdentifier: 
   ModifierValues:
-  - MinModValue: 1
-    MaxModValue: 1.1
-    ModTargetStat: {fileID: 11400000, guid: 161117a002d8a8b4eb1bb0ab04eed9f3, type: 2}
-    ModifierOperation: {fileID: 11400000, guid: 79b08b92ce7150e4e906057f30b7abf2, type: 2}
+  - MinModValue: 0
+    MaxModValue: 0.1
+    ModValue:
+      ModValue: 1.0396264
+      ModTargetStatTag: {fileID: 11400000, guid: cec7548940f996a4eb14bdd2c0f4103c, type: 2}
+      ModOpTag: 1

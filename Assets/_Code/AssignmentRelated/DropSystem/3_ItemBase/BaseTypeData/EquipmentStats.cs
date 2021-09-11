@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO.Compression;
+using System.Linq;
 using _Code;
 using _Code.Extensions;
 using _Code.ModifierOperations;
@@ -15,16 +16,16 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
     {
         public EquipmentBaseData BaseStats;
         
-        [SerializeField] private List<EquipmentStatValue> FinalStats;
+        [SerializeField] private List<FullStatValue> FinalStats;
         
-        [Header("Implicits")]
-        [SerializeField] private List<ModifierGroup> ImplicitModPool;
-        [SerializeField] private List<EquipmentStatValue> ImplicitValues;
+        [Space]
+        [SerializeField] private List<ModifierGroupInstance> ImplicitModPool;
+        private List<ModifierValueRange> implicitValueRanges;
         
-        [Header("Explicits")]
+        [Space]
         [SerializeField] private ItemRarity Rarity;
-        [SerializeField] private List<ModifierGroup> CachedExplicitValues;
-        [SerializeField] private List<EquipmentStatValue> ExplicitValues;
+        [SerializeField] private List<ModifierGroupInstance> CachedExplicitValues;
+        private List<ModifierValueRange> explicitValueRanges;
         
         
         public override void UseItem()
@@ -32,96 +33,101 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
             EquipmentManager.instance.Equip(this);
         }
 
-        public void RollImplicitModifierValues() // Blessed Orb
+        public void RerollItemRarity()
         {
-            ImplicitValues.Clear();
+            
+        }
+
+        public void GetNewImplicitModifiers() // Is this even useful??
+        {
+            implicitValueRanges.Clear();
             foreach (var mod in ImplicitModPool)
             {
-                foreach (var statValue in mod.RollModifierValues())
+                foreach (var modRange in mod.ModifierValues)
                 {
-                    ImplicitValues.Add(statValue);
+                    implicitValueRanges.Add(modRange);
                 }
             }
-
-            AdjustFinalValues();
-        }
-        
-        public void RollExplicitModifierValues() // Divine Orb
-        {
-            ExplicitValues.Clear();
-            foreach (var mod in CachedExplicitValues)
-            {
-                foreach (var statValue in mod.RollModifierValues())
-                {
-                    ExplicitValues.Add(statValue);
-                }
-            }
-            AdjustFinalValues();
         }
 
-        public void PickExplicitsFromPool()
+        public void GetNewExplicitModifiers() // Chaos Orb
         {
-            BaseStats.ExplicitModPool.Holders.GetRandomElements(Rarity.MaxModSlots);
+            CachedExplicitValues.Clear();
+
+            List<ModifierGroupInstance> allExplicitModGroups = BaseStats.ExplicitModPool.GetGroupInstances();
+            int modCount = Mathf.Clamp(Rarity.GetModCountFromRarity(),1,allExplicitModGroups.Count);
+            CachedExplicitValues = allExplicitModGroups.GetRandomElements(modCount).ToList();
             
-            CachedExplicitValues = BaseStats.ExplicitModPool.Holders;
+            explicitValueRanges.Clear();
+
+            foreach (var modGroup in CachedExplicitValues)
+            {
+                for (int i = 0; i < modGroup.ModifierValues.Length; i++)
+                {
+                    explicitValueRanges.Add(modGroup.ModifierValues[i]);
+                }
+            }
+            
+            RerollExplicitModifierValues();
         }
 
-        private List<StatTag> GetLocalTags
+        public void RerollImplicitModifierValues() // Blessed Orb
         {
-            get
+            foreach (var range in implicitValueRanges)
             {
-                List<StatTag> localTags = new List<StatTag>();
-
-                foreach (var localValue in BaseStats.EquipmentLocalValues)
-                {
-                    localTags.Add(localValue.ModTargetStatTag);
-                }
-
-                return localTags;
+                range.RerollValue();
             }
+            
+            AdjustFinalValues();
         }
         
+        public void RerollExplicitModifierValues() // Divine Orb
+        {
+            foreach (var range in explicitValueRanges)
+            {
+                range.RerollValue();
+            }
+            
+            AdjustFinalValues();
+        }
+
         private void AdjustFinalValues()
         {
-            List<EquipmentStatValue> finalStatValues = new List<EquipmentStatValue>();
+            List<FullStatValue> finalStatValues = new List<FullStatValue>();
+            List<RawModifierValue> rawModValues = new List<RawModifierValue>();
 
-            List<StatTag> itemTags = GetLocalTags;
-
-            foreach (var implicitMod in ImplicitValues)
+            foreach (var implicitMod in implicitValueRanges)
             {
-                if (itemTags.Contains(implicitMod.AssociatedStatTag))
-                {
-                    continue;
-                }
-                itemTags.Add(implicitMod.AssociatedStatTag);
+                rawModValues.Add(implicitMod.ModValue);
             }
 
-            foreach (var explicitMod in ExplicitValues)
+            foreach (var explicitMod in explicitValueRanges)
             {
-                if (itemTags.Contains(explicitMod.AssociatedStatTag))
-                {
-                    continue;
-                }
-                itemTags.Add(explicitMod.AssociatedStatTag);
+                rawModValues.Add(explicitMod.ModValue);
             }
-            
-            // all tags are here 
-            // I'd like a method to get all mods based on a tag
 
-            foreach (var statTag in itemTags)
+            foreach (var localMod in BaseStats.EquipmentLocalValues)
             {
-                EquipmentStatValue finalValuePerStatTag = new EquipmentStatValue();
-                finalValuePerStatTag.AssociatedStatTag = statTag;
+                rawModValues.Add(localMod.ToRawMod());
+            }
 
-                foreach (var implicitMod in ImplicitValues)
+            foreach (var rawMod in rawModValues)
+            {
+                FullStatValue correspondingStat = finalStatValues.Find(statValue => statValue.AssociatedStatTag == rawMod.ModTargetStatTag);
+                if (correspondingStat == null)
                 {
-                    if (implicitMod.AssociatedStatTag == finalValuePerStatTag.AssociatedStatTag)
-                    {
-                        //finalValuePerStatTag.AddModifier();
-                    }
+                    correspondingStat = new FullStatValue(rawMod.ModTargetStatTag);
+                    finalStatValues.Add(correspondingStat);
                 }
                 
-                // finalStatValues.Add();
+                correspondingStat.TryAddModifier(rawMod);
+            }
+
+            FinalStats = finalStatValues;
+
+            foreach (var stat in FinalStats)
+            {
+                stat.GetFinalValue();
             }
         }
     }
@@ -140,29 +146,21 @@ public class ItemRarity
     }
 }
 
-// [Serializable]
-// public struct LocalStatValue
-// {
-//     public StatTag AssociatedStatTag;
-//     public float FlatValue;
-// }
-
 [Serializable]
-public struct EquipmentStatValue
+public class FullStatValue
 {
     public StatTag AssociatedStatTag;
-    public bool localMod;
-    public List<float> FlatTotal;
-    public List<float> IncreaseMultipliers;
-    public List<float> MoreMultipliers;
-
-    public EquipmentStatValue(StatTag tag, float statValue, ModifierOperationTag modOperation)
+    public bool localMod = true;
+    public float FinalValue = 0;
+    public List<float> FlatTotal = new List<float>();
+    public List<float> IncreaseMultipliers = new List<float>();
+    public List<float> MoreMultipliers = new List<float>();
+    
+    public FullStatValue() { }
+    
+    public FullStatValue(StatTag tag)
     {
         AssociatedStatTag = tag;
-        localMod = true;
-        FlatTotal = new List<float>();
-        IncreaseMultipliers = new List<float>();
-        MoreMultipliers = new List<float>();
     }
     
     public float GetFinalValue()
@@ -177,7 +175,7 @@ public struct EquipmentStatValue
 
         finalValue += flatSum;
 
-        if (flatSum == 0)
+        if (flatSum < 1)
         {
             localMod = false;
             finalValue = 1;
@@ -196,14 +194,14 @@ public struct EquipmentStatValue
             finalValue *= more;
         }
 
+        FinalValue = finalValue;
         return finalValue;
     }
 
-    public void AddModifier(StatTag tag, float statValue, ModifierOperationTag modOperation)
+    public void TryAddModifier(StatTag tag, float statValue, ModifierOperationTag modOperation)
     {
         if (tag != AssociatedStatTag)
         {
-            Debug.LogError("Tag is invalid for this mod");
             return;
         }
 
@@ -227,9 +225,9 @@ public struct EquipmentStatValue
         }
     }
     
-    public void AddModifier(ModifierValueRange mod)
+    public void TryAddModifier(RawModifierValue mod)
     {
-        AddModifier(mod.ModValue.ModTargetStatTag,mod.GetValue(),mod.ModValue.ModOpTag);
+        TryAddModifier(mod.ModTargetStatTag,mod.ModValue,mod.ModOpTag);
     }
 }
 

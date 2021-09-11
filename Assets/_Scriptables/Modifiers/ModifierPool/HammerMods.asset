@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8867d5afd13344e88df88d5e11ae3081, type: 3}
   m_Name: HammerMods
   m_EditorClassIdentifier: 
-  Holders: []
+  ModGroups:
+  - {fileID: 11400000, guid: 45b733563a33a024dbe0580ab2ddbb85, type: 2}
+  - {fileID: 11400000, guid: b6b32dc562c589b439287dc2734dec37, type: 2}

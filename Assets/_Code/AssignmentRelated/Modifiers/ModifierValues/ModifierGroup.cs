@@ -13,18 +13,34 @@ namespace _Code
     {
         public ModifierValueRange[] ModifierValues;
         
-        public List<EquipmentStatValue> RollModifierValues()
+        public List<FullStatValue> RollModifierValues()
         {
-            List<EquipmentStatValue> modValues = new List<EquipmentStatValue>();
+            List<FullStatValue> modValues = new List<FullStatValue>();
             
             for (int i = 0; i < ModifierValues.Length; i++)
             {
-                modValues.Add(new EquipmentStatValue());
-                modValues[i].AddModifier(ModifierValues[i]);
+                modValues.Add(new FullStatValue());
+                modValues[i].TryAddModifier(ModifierValues[i].ModValue);
             }
     
             return modValues;
         }
+
+        public ModifierGroupInstance GetAsInstance()
+        {
+            ModifierGroupInstance groupInstance = new ModifierGroupInstance
+            {
+                ModifierValues = this.ModifierValues
+            };
+            return groupInstance;
+        }
+        
+    }
+
+    [Serializable]
+    public class ModifierGroupInstance
+    {
+        public ModifierValueRange[] ModifierValues;
     }
     
     [Serializable] 
@@ -36,18 +52,10 @@ namespace _Code
         public float MaxModValue;
         public RawModifierValue ModValue;
     
-        public float GetValue()
+        public float RerollValue()
         {
             return ModValue.RerollBetween(MinModValue, MaxModValue);
         }
-    }
-    
-    [Serializable] 
-    public class StatValue
-    {
-        public float ModValue;
-        public StatTag ModTargetStatTag;
-        public ModifierOperationTag ModOpTag;
     }
 
     [Serializable] 
@@ -59,4 +67,23 @@ namespace _Code
             return ModValue;
         }
     }
+        
+    [Serializable] 
+    public class StatValue
+    {
+        public float ModValue;
+        public StatTag ModTargetStatTag;
+        public ModifierOperationTag ModOpTag;
+
+        public RawModifierValue ToRawMod()
+        {
+            RawModifierValue localModConverted = new RawModifierValue();
+            localModConverted.ModValue = ModValue;
+            localModConverted.ModOpTag = ModOpTag;
+            localModConverted.ModTargetStatTag = ModTargetStatTag;
+
+            return localModConverted;
+        }
+    }
+
 }
