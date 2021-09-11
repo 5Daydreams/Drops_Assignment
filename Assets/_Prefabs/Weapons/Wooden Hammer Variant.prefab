@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8655635769408801148
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2103576687035295184, guid: da65704565614ca4da4f358ff08dcd5e, type: 3}
+      propertyPath: m_Name
+      value: Wooden Hammer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103576687035295190, guid: da65704565614ca4da4f358ff08dcd5e, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103576687035295190, guid: da65704565614ca4da4f358ff08dcd5e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103576687035295190, guid: da65704565614ca4da4f358ff08dcd5e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103576687035295190, guid: da65704565614ca4da4f358ff08dcd5e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103576687035295190, guid: da65704565614ca4da4f358ff08dcd5e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8321271
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103576687035295190, guid: da65704565614ca4da4f358ff08dcd5e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.38126525
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103576687035295190, guid: da65704565614ca4da4f358ff08dcd5e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.3564205
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103576687035295190, guid: da65704565614ca4da4f358ff08dcd5e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.18752544
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103576687035295190, guid: da65704565614ca4da4f358ff08dcd5e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 50.192
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103576687035295190, guid: da65704565614ca4da4f358ff08dcd5e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 44.682
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103576687035295190, guid: da65704565614ca4da4f358ff08dcd5e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -3.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 5579029804343828436, guid: da65704565614ca4da4f358ff08dcd5e, type: 3}
+      propertyPath: Name
+      value: Wooden Hammer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5579029804343828436, guid: da65704565614ca4da4f358ff08dcd5e, type: 3}
+      propertyPath: BaseStats
+      value: 
+      objectReference: {fileID: 11400000, guid: acfa7e8d43007ba4d8342de738c58b63, type: 2}
+    - target: {fileID: 5579029804343828436, guid: da65704565614ca4da4f358ff08dcd5e, type: 3}
+      propertyPath: InventoryIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: a348563c2ed91af48ba577b104746a4c, type: 3}
+    - target: {fileID: 5579029804343828436, guid: da65704565614ca4da4f358ff08dcd5e, type: 3}
+      propertyPath: ImplicitValues.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5579029804343828436, guid: da65704565614ca4da4f358ff08dcd5e, type: 3}
+      propertyPath: ImplicitModPool.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: b6b32dc562c589b439287dc2734dec37, type: 2}
+    - target: {fileID: 5579029804343828436, guid: da65704565614ca4da4f358ff08dcd5e, type: 3}
+      propertyPath: ImplicitValues.Array.data[0].AssociatedStatTag
+      value: 
+      objectReference: {fileID: 11400000, guid: 56995955f5f0c67469e8b2566363db32, type: 2}
+    - target: {fileID: 5579029804343828436, guid: da65704565614ca4da4f358ff08dcd5e, type: 3}
+      propertyPath: ImplicitValues.Array.data[0].AssociatedStatValue
+      value: 1.2008471
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: da65704565614ca4da4f358ff08dcd5e, type: 3}

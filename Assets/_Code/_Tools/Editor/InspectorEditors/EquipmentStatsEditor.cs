@@ -37,25 +37,25 @@ namespace _Tools.Editor
                 ((EquipmentStats) target).RollExplicitModifierValues();
             }
 
-            So.Update();
-
-            using (new EditorGUILayout.VerticalScope(EditorStyles.helpBox))
-            {
-                EditorGUILayout.Separator();
-                using (new EditorGUILayout.HorizontalScope())
-                {
-                    var label = PropName.propertyPath;
-                    EditorGUILayout.LabelField(label);
-                    EditorGUILayout.LabelField(PropName.stringValue);
-                }
-
-                EditorGUILayout.Separator();
-                EditorGUI.indentLevel += 2;
-                EditorGUILayout.PropertyField(PropEquipmentBaseStats);
-                EditorGUI.indentLevel -= 2;
-            }
-
-            So.ApplyModifiedProperties();
+            // So.Update();
+            //
+            // using (new EditorGUILayout.VerticalScope(EditorStyles.helpBox))
+            // {
+            //     EditorGUILayout.Separator();
+            //     using (new EditorGUILayout.HorizontalScope())
+            //     {
+            //         var label = PropName.propertyPath;
+            //         EditorGUILayout.LabelField(label);
+            //         EditorGUILayout.LabelField(PropName.stringValue);
+            //     }
+            //
+            //     EditorGUILayout.Separator();
+            //     EditorGUI.indentLevel += 2;
+            //     EditorGUILayout.PropertyField(PropEquipmentBaseStats);
+            //     EditorGUI.indentLevel -= 2;
+            // }
+            //
+            // So.ApplyModifiedProperties();
         }
     }
 }

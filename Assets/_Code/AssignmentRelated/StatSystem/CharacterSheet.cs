@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class CharacterSheet : MonoBehaviour
 {
-    [SerializeField] private List<StatValue> _stats;
+    [SerializeField] private List<EquipmentStatValue> _stats;
 
 }

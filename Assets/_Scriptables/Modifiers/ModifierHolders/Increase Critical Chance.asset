@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb4b7ff1eb86487186319dc0a69e055a, type: 3}
-  m_Name: Add Flat Evasion
+  m_Name: Increase Critical Chance
   m_EditorClassIdentifier: 
   ModifierValues:
-  - ModTargetStat: {fileID: 11400000, guid: 24c4afbee9cf2364fa705aff6bd32d5a, type: 2}
-    ModTargetStatValue: {fileID: 11400000, guid: fd20d1cc43afb084284460698d976ba0, type: 2}
+  - MinModValue: 1.2
+    MaxModValue: 1.4
+    ModTargetStat: {fileID: 11400000, guid: 56995955f5f0c67469e8b2566363db32, type: 2}
+    ModifierOperation: {fileID: 11400000, guid: 79b08b92ce7150e4e906057f30b7abf2, type: 2}

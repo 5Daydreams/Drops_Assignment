@@ -6,9 +6,6 @@ namespace _Code.ModifierOperations
     [CreateAssetMenu(menuName = "ItemDropPool/ModifiersTypes/MultiplyPercent")]
     public class MultiplyPercent : ModifierOperationType
     {
-        [Range(0.5f, 2.0f)] public float MinMultiplier;
-        [Range(0.5f, 2.0f)] public float MaxMultiplier;
-
         public override Func<float,float,float> GetOperation()
         {
             float Multiply(float a, float b)

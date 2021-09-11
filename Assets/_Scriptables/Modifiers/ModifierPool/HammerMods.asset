@@ -9,6 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d098d1b454d46c28e194493818f198d, type: 3}
-  m_Name: PhysicalDamageMax
+  m_Script: {fileID: 11500000, guid: 8867d5afd13344e88df88d5e11ae3081, type: 3}
+  m_Name: HammerMods
   m_EditorClassIdentifier: 
+  Holders: []

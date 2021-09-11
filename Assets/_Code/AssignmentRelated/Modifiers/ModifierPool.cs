@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace _Code
 {
-    [CreateAssetMenu(menuName = "ItemDropPool/ModifierHolder")]
+    [CreateAssetMenu(menuName = "ItemDropPool/ModifierPool")]
     public class ModifierPool : ScriptableObject
     {
-        public List<ModifierHolder> Holders;
+        public List<ModifierGroup> Holders;
     }
 }
