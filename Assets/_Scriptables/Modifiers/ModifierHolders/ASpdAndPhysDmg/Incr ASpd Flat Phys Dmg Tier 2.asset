@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb4b7ff1eb86487186319dc0a69e055a, type: 3}
+  m_Name: Incr ASpd Flat Phys Dmg Tier 2
+  m_EditorClassIdentifier: 
+  ModifierValues:
+  - MinModValue: 0.08
+    MaxModValue: 0.14
+    ModValue:
+      ModValue: 0
+      ModTargetStatTag: {fileID: 11400000, guid: cec7548940f996a4eb14bdd2c0f4103c, type: 2}
+      ModOpTag: 0
+  - MinModValue: 3
+    MaxModValue: 6
+    ModValue:
+      ModValue: 0
+      ModTargetStatTag: {fileID: 11400000, guid: faebd683d8bcb36409927425c8893a21, type: 2}
+      ModOpTag: 0
+  - MinModValue: 7
+    MaxModValue: 10
+    ModValue:
+      ModValue: 0
+      ModTargetStatTag: {fileID: 11400000, guid: 1d8e0052d915d8e419969d7af1c496d6, type: 2}
+      ModOpTag: 0

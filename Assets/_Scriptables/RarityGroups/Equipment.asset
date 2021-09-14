@@ -13,18 +13,15 @@ MonoBehaviour:
   m_Name: Equipment
   m_EditorClassIdentifier: 
   RarityTiers:
-  - RarityColor: {r: 1, g: 1, b: 1, a: 1}
+  - RarityColor: {r: 0.518, g: 0.518, b: 0.518, a: 1}
     MinModSlots: 0
     MaxModSlots: 0
-  - RarityColor: {r: 0.3254717, g: 1, b: 0.35457048, a: 1}
+  - RarityColor: {r: 0.1743396, g: 0.40679243, b: 0.66, a: 1}
     MinModSlots: 1
     MaxModSlots: 2
-  - RarityColor: {r: 0.25943398, g: 0.6133173, b: 1, a: 1}
+  - RarityColor: {r: 0.816, g: 0.7068068, b: 0.204, a: 1}
     MinModSlots: 3
     MaxModSlots: 5
-  - RarityColor: {r: 0.42414117, g: 0.25, b: 1, a: 1}
-    MinModSlots: 5
-    MaxModSlots: 7
-  - RarityColor: {r: 0.894, g: 0.58088917, b: 0.3247075, a: 1}
-    MinModSlots: 7
-    MaxModSlots: 10
+  - RarityColor: {r: 0.96900004, g: 0.2968171, b: 0.21318004, a: 1}
+    MinModSlots: 6
+    MaxModSlots: 8
