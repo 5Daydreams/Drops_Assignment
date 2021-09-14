@@ -27,26 +27,6 @@ namespace _Code.AssignmentRelated.DropSystem._1_GeneratorSystem
 #else
         Instantiate(selectedInstance,this.transform.position + Vector3.right * noise ,Quaternion.identity);
 #endif
-
-            // Roll pre-rarity Setups (Implicit value range, Quality value range, Influence enum*)
-
-            // Roll Rarity
-
-            // Within Rarity, Roll modifier Count
-
-            // For each available modifier {
-            // Roll Modifier Type/Stat
-            // Roll Modifier Value Tier
-            // Roll Modifier Value
-            // }
-
-            // Final Item has:
-            // base type (name, sprite, categoryStats)
-            // implicit (based on base type)
-            // rarity (if available)
-            // N mod slots filled (based on rarity)
-            // mods with a rolled tier and value
-            // 
         }
 
         private InventoryItemBase GetRandomItemBase(List<ItemCategory> categories)
