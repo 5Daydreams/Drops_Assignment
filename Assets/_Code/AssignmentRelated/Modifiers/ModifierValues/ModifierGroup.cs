@@ -45,8 +45,6 @@ namespace _Code.AssignmentRelated.Modifiers.ModifierValues
     [Serializable] 
     public struct ModifierValueRange
     {
-        // protected int tier;
-        
         public float MinModValue;
         public float MaxModValue;
         public RawModifierValue ModValue;

@@ -50,7 +50,7 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
             CurrentRarity.RerollRarity(RarityPoolGroup);
         }
 
-        public void GetNewImplicitModifiers() // Is this even useful??
+        public void GetNewImplicitModifiers() 
         {
             implicitValueRanges.Clear();
             foreach (var mod in ImplicitModPool)
@@ -62,7 +62,7 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
             }
         }
 
-        public void GetNewExplicitModifiers() // Chaos Orb
+        public void GetNewExplicitModifiers() 
         {
             CachedExplicitValues.Clear();
 
@@ -87,7 +87,7 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
             RerollExplicitModifierValues();
         }
 
-        public void RerollImplicitModifierValues() // Blessed Orb
+        public void RerollImplicitModifierValues() 
         {
             foreach (var range in implicitValueRanges)
             {
@@ -97,7 +97,7 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
             AdjustFinalValues();
         }
 
-        public void RerollExplicitModifierValues() // Divine Orb
+        public void RerollExplicitModifierValues() 
         {
             foreach (var range in explicitValueRanges)
             {

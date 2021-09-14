@@ -20,14 +20,12 @@ namespace _Code.ControllerScripts.Camera
         [SerializeField] private float pitch = 1.5f;
 
         [Header("Settings - Vertical Angle")] 
-        //[SerializeField] private bool flipVertical = false;
         [SerializeField] private float pitchAngleSpeed = 30.0f;
         [SerializeField] private float minPitchAngle = 1.0f;
         [SerializeField] private float maxPitchAngle = 3.0f;
         private float currPitchAngle = 2.0f;
 
         [Header("Settings - Horizontal Angle")]
-        //[SerializeField] private bool flipHorizontal = false;
         [SerializeField] private float yawSpeed = 100.0f;
         [SerializeField] private float yawSpeedMouse = 70.0f;
         private float currentYaw = 0.0f;
@@ -60,8 +58,7 @@ namespace _Code.ControllerScripts.Camera
 
             lastMousePos = Input.mousePosition;
         }
-
-        // Update is called once per frame
+        
         void LateUpdate()
         {
             transform.position = targetToFollow.position + finalOffset * currentZoom + Vector3.up * pitch;

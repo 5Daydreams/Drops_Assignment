@@ -28,7 +28,6 @@ namespace _Code.ControllerScripts
 
                 if (distance <= agent.stoppingDistance)
                 {
-                    // attack target
                     FaceTarget();
                 }
             }

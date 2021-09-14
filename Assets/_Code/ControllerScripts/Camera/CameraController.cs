@@ -42,17 +42,14 @@ namespace _Code.ControllerScripts.Camera
             if (Input.GetMouseButton(1) && drag.sqrMagnitude > 1.5f)
             {
                 currentYaw += drag.x * yawSpeedMouse * Time.deltaTime;
-            
-                // currentZoom -= drag.y * zoomSpeed * Time.deltaTime;
-                // currentZoom = Mathf.Clamp(currentZoom, minZoom, maxZoom);
+                
                 pitch -= drag.y * zoomSpeed * Time.deltaTime;
                 pitch = Mathf.Clamp(pitch, minPitch, maxPitch);
             }
         
             lastMousePos = Input.mousePosition;
         }
-
-        // Update is called once per frame
+        
         void LateUpdate()
         {
             transform.position = targetToFollow.position + offset * currentZoom + Vector3.up * pitch;

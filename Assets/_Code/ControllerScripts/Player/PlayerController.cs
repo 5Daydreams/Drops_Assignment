@@ -13,14 +13,12 @@ namespace _Code.ControllerScripts.Player
         private UnityEngine.Camera _cam;
         private PlayerMotor _motor;
 
-        // Start is called before the first frame update
         void Start()
         {
             _cam = UnityEngine.Camera.main;
             _motor = GetComponent<PlayerMotor>();
         }
 
-        // Update is called once per frame
         void Update()
         {
             if (EventSystem.current.IsPointerOverGameObject())
