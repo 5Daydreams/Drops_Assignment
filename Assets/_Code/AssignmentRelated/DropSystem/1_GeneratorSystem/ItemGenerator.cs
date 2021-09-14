@@ -15,9 +15,9 @@ namespace _Code.AssignmentRelated.DropSystem._1_GeneratorSystem
             InventoryItemBase selectedInstance = GetRandomItemBase(_categories);
 
             // drop items with a minor position offset
-            float noisex = 0.5f * Mathf.PerlinNoise(Time.time * 10.0f, 0);
-            float noisey = 0.5f * Mathf.PerlinNoise(Time.time * 10.0f, Time.time * 10.0f);
-            float noisez = 0.5f * Mathf.PerlinNoise(0, Time.time * 10.0f);
+            float noisex = 0.5f * (Mathf.PerlinNoise(Time.time * 10.0f, 0) + 1);
+            float noisey = 0.5f * (Mathf.PerlinNoise(Time.time * 10.0f, Time.time * 10.0f) + 1);
+            float noisez = 0.5f * (Mathf.PerlinNoise(0, Time.time * 10.0f) + 1);
 
             Vector3 noiseVector = new Vector3(noisex, noisey, noisez);
 
