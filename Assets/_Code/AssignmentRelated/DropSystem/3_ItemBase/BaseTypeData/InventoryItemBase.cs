@@ -15,6 +15,7 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
 
         public abstract void SpawnItem(Vector3 position, Quaternion rotation, Transform parent);
         public abstract void SpawnItem(Vector3 position, Quaternion rotation);
+        public abstract Func<string> GetTooltip();
         
         public abstract void UseItem();
     }

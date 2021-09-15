@@ -4985,6 +4985,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tooltipBackground: {fileID: 1876153775}
+  _canvas: {fileID: 1746733684}
   _tooltipText: {fileID: 1655660648}
   textPaddingSize: 4
 --- !u!1 &1447475106

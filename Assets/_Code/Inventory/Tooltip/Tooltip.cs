@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData;
 using _Code.AssignmentRelated.StatSystem;
+using CodeMonkey.Utils;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,59 +12,95 @@ public class Tooltip : MonoBehaviour
 {
     private static Tooltip instance;
     [SerializeField] private RectTransform _tooltipBackground;
+    [SerializeField] private RectTransform _canvas;
     [SerializeField] private Text _tooltipText;
     [SerializeField] private float textPaddingSize = 4.0f;
-    private bool _isOpen = false;
+    private Func<string> getTooltipStringFunc;
 
     private void Awake()
     {
         instance = this;
-        // Code monkey is being dumb :)
-        ShowTooltip("hello");
     }
 
     private void ShowTooltip(string tooltipString)
     {
-        if(_isOpen == true)
-            return;
-        
-        _isOpen = true;
-        SetTooltipActive(true);
-        _tooltipText.text = tooltipString;
+        ShowTooltip(() => tooltipString);
+    }
 
+    private void ShowTooltip(Func<string> getTooltipStringFunc)
+    {
+        gameObject.SetActive(true);
+        transform.SetAsLastSibling();
+        this.getTooltipStringFunc = getTooltipStringFunc;
+        SetTooltipText(this.getTooltipStringFunc());
+    }
+
+    private void SetTooltipText(string tooltipText)
+    {
+        _tooltipText.text = tooltipText;
         Vector2 backgroundSize = new Vector2(
-            _tooltipText.preferredWidth + textPaddingSize*2,
-            _tooltipText.preferredHeight + textPaddingSize*2);
-        
+            _tooltipText.preferredWidth + textPaddingSize * 2,
+            _tooltipText.preferredHeight + textPaddingSize * 2);
+
         _tooltipBackground.sizeDelta = backgroundSize;
     }
 
     private void Update()
     {
-        Vector3 mousePos = Input.mousePosition;
-        mousePos.x = (mousePos.x - Screen.width/2.0f)*1080/Screen.height;
-        mousePos.y = (mousePos.y - Screen.height/2.0f) *1080/Screen.height;
-        mousePos.z = 0;
-        transform.localPosition = mousePos;
-    }
+        Vector2 localPoint;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent.GetComponent<RectTransform>(),
+            Input.mousePosition, null, out localPoint);
+        transform.localPosition = localPoint;
 
+        SetTooltipText(getTooltipStringFunc());
+        
+        Vector2 anchoredPosition = transform.GetComponent<RectTransform>().anchoredPosition;
+        if (anchoredPosition.x + _tooltipBackground.rect.width > _canvas.rect.width || anchoredPosition.x < 0)
+        {
+            anchoredPosition.x = Mathf.Clamp(anchoredPosition.x, 0, _canvas.rect.width - _tooltipBackground.rect.width);
+        }
+
+        if (anchoredPosition.y + _tooltipBackground.rect.height > _canvas.rect.height || anchoredPosition.y < 0)
+        {
+            anchoredPosition.y =
+                Mathf.Clamp(anchoredPosition.y, 0, _canvas.rect.height - _tooltipBackground.rect.height);
+        }
+
+        transform.GetComponent<RectTransform>().anchoredPosition = anchoredPosition;
+    }
+    
     private void HideTooltip()
     {
-        SetTooltipActive(false);
+        gameObject.SetActive(false);
     }
 
-    private void SetTooltipActive(bool value)
+    public static void AddTooltip(Transform transform, string tooltipText)
     {
-        gameObject.SetActive(value);
+        AddTooltip(transform, () => tooltipText);
     }
 
-    public static void RequestTooltip(string tooltipMessage)
+    public static void AddTooltip(Transform transform, Func<string> getTooltipStringFunc)
     {
-        instance.ShowTooltip(tooltipMessage);
+        Button_UI targetButton = transform.GetComponent<Button_UI>();
+        if (targetButton != null)
+        {
+            targetButton.MouseOverOnceTooltipFunc = () => Tooltip.RequestTooltip( getTooltipStringFunc);
+            targetButton.MouseOutOnceTooltipFunc = () => Tooltip.RequestHideTooltip();
+        }
     }
 
-    public static void RequesetHideTooltip()
+    public static void RequestTooltip(Func<string> tooltipFunc)
+    {
+        instance.ShowTooltip(tooltipFunc);
+    }
+
+    public static void RequestHideTooltip()
     {
         instance.HideTooltip();
+    }
+
+    public static void RequestItemTooltip(InventoryItemBase item)
+    {
+        // item
     }
 }

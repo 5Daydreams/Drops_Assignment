@@ -38,6 +38,13 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
             SpawnItem(position, rotation, null);
         }
 
+        public override Func<string> GetTooltip()
+        {
+            Func<string> getTooltip;
+            
+            
+        }
+
 
         public override void UseItem()
         {
