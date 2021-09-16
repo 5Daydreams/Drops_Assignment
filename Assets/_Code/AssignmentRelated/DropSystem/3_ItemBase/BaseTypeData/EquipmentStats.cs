@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using _Code.AssignmentRelated.Modifiers.ModifierValues;
 using _Code.AssignmentRelated.StatSystem;
 using BrackeysImport._Code.Inventory;
@@ -15,12 +16,10 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
 
         [SerializeField] private List<FullStatValue> FinalStats;
 
-        [Space] 
-        [SerializeField] private List<ModifierGroupInstance> ImplicitModPool;
+        [Space] [SerializeField] private List<ModifierGroupInstance> ImplicitModPool;
         private List<ModifierValueRange> implicitValueRanges = new List<ModifierValueRange>();
 
-        [Space] 
-        [SerializeField] private List<ModifierGroupInstance> CachedExplicitValues;
+        [Space] [SerializeField] private List<ModifierGroupInstance> CachedExplicitValues;
         private List<ModifierValueRange> explicitValueRanges = new List<ModifierValueRange>();
 
 
@@ -38,11 +37,24 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
             SpawnItem(position, rotation, null);
         }
 
-        public override Func<string> GetTooltip()
+        public override string GetTooltip()
         {
-            Func<string> getTooltip;
-            
-            
+            StringBuilder tooltipText = new StringBuilder("");
+            string newLine = "\n";
+
+            tooltipText.Append("  " + Name + "  ");
+            tooltipText.Append(newLine);
+            tooltipText.Append(newLine);
+            for (int i = 0; i < FinalStats.Count; i++)
+            {
+                FullStatValue currentStat = FinalStats[i];
+                tooltipText.Append(" " + currentStat.AssociatedStatTag.name + ": ");
+                tooltipText.Append(currentStat.FinalValue);
+
+                tooltipText.Append(" " + newLine);
+            }
+
+            return tooltipText.ToString();
         }
 
 
@@ -57,7 +69,7 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
             CurrentRarity.RerollRarity(RarityPoolGroup);
         }
 
-        public void GetNewImplicitModifiers() 
+        public void GetNewImplicitModifiers()
         {
             implicitValueRanges.Clear();
             foreach (var mod in ImplicitModPool)
@@ -69,7 +81,7 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
             }
         }
 
-        public void GetNewExplicitModifiers() 
+        public void GetNewExplicitModifiers()
         {
             CachedExplicitValues.Clear();
 
@@ -94,7 +106,7 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
             RerollExplicitModifierValues();
         }
 
-        public void RerollImplicitModifierValues() 
+        public void RerollImplicitModifierValues()
         {
             foreach (var range in implicitValueRanges)
             {
@@ -104,7 +116,7 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
             AdjustFinalValues();
         }
 
-        public void RerollExplicitModifierValues() 
+        public void RerollExplicitModifierValues()
         {
             foreach (var range in explicitValueRanges)
             {
@@ -147,7 +159,7 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
                 correspondingStat.TryAddModifier(rawMod);
             }
 
-            FinalStats = finalStatValues;
+            FinalStats = finalStatValues.OrderBy(x => x.AssociatedStatTag.name).ToList();
 
             foreach (var stat in FinalStats)
             {
@@ -166,11 +178,7 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
         public List<float> IncreaseMultipliers = new List<float>();
         public List<float> MoreMultipliers = new List<float>();
 
-        public FullStatValue()
-        {
-        }
-
-        public FullStatValue(StatTag tag)
+        public FullStatValue(StatTag tag = null)
         {
             AssociatedStatTag = tag;
         }
@@ -203,7 +211,16 @@ namespace _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData
 
             foreach (var more in MoreMultipliers)
             {
-                finalValue *= more;
+                finalValue *= 1+more;
+            }
+            
+            if (AssociatedStatTag.isInt)
+            {
+                finalValue = Mathf.Round(finalValue);
+            }
+            else
+            {
+                finalValue = (float) Math.Round(finalValue, 2);
             }
 
             FinalValue = finalValue;

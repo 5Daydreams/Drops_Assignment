@@ -9,12 +9,19 @@ using UnityEngine;
 public class TooltipWindow : MonoBehaviour
 {
     private Button_UI _button;
-    [SerializeField] private InventorySlot _slotInfo;
+    private string tooltipText = "";
 
     private void Awake()
     {
         _button = GetComponent<Button_UI>();
+        
+        tooltipText = "";
 
-        Tooltip.AddTooltip(this.transform, () => "Hello");
+        Tooltip.AddTooltip(this.transform, () => tooltipText);
+    }
+
+    public void AdaptTooltip(string newTooltip)
+    {
+        tooltipText = newTooltip;
     }
 }

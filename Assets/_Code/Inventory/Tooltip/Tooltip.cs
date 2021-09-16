@@ -15,11 +15,13 @@ public class Tooltip : MonoBehaviour
     [SerializeField] private RectTransform _canvas;
     [SerializeField] private Text _tooltipText;
     [SerializeField] private float textPaddingSize = 4.0f;
-    private Func<string> getTooltipStringFunc;
+    [SerializeField] private float screenPadding = 40.0f;
+    private Func<string> getTooltipStringFunc = () => "";
 
     private void Awake()
     {
         instance = this;
+        HideTooltip();
     }
 
     private void ShowTooltip(string tooltipString)
@@ -55,15 +57,15 @@ public class Tooltip : MonoBehaviour
         SetTooltipText(getTooltipStringFunc());
         
         Vector2 anchoredPosition = transform.GetComponent<RectTransform>().anchoredPosition;
-        if (anchoredPosition.x + _tooltipBackground.rect.width > _canvas.rect.width || anchoredPosition.x < 0)
+        if (anchoredPosition.x + _tooltipBackground.rect.width/2 > _canvas.rect.width - screenPadding || anchoredPosition.x < 0)
         {
-            anchoredPosition.x = Mathf.Clamp(anchoredPosition.x, 0, _canvas.rect.width - _tooltipBackground.rect.width);
+            anchoredPosition.x = Mathf.Clamp(anchoredPosition.x, 0, _canvas.rect.width - (screenPadding + _tooltipBackground.rect.width/2));
         }
 
-        if (anchoredPosition.y + _tooltipBackground.rect.height > _canvas.rect.height || anchoredPosition.y < 0)
+        if (anchoredPosition.y + _tooltipBackground.rect.height + screenPadding > _canvas.rect.height || anchoredPosition.y < 0)
         {
             anchoredPosition.y =
-                Mathf.Clamp(anchoredPosition.y, 0, _canvas.rect.height - _tooltipBackground.rect.height);
+                Mathf.Clamp(anchoredPosition.y, 0, _canvas.rect.height - (screenPadding + _tooltipBackground.rect.height));
         }
 
         transform.GetComponent<RectTransform>().anchoredPosition = anchoredPosition;

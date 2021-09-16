@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edcc14bae81e408baaae61f611a4a24d, type: 3}
   m_Name: Plate Vest Base
   m_EditorClassIdentifier: 
-  Name: Plate Vest
-  Icon: {fileID: 21300000, guid: e493f8cae55f769459747aaa01c4bb98, type: 3}
-  EquipmentBaseStats:
-  - AssociatedStatTag: {fileID: 11400000, guid: ec81271b844a4f740aaa363afe4ff611, type: 2}
-    AssociatedStatValue: 19
+  EquipmentLocalValues:
+  - ModValue: 8
+    ModTargetStatTag: {fileID: 11400000, guid: ec81271b844a4f740aaa363afe4ff611, type: 2}
+    ModOpTag: 0
   EquipmentSlot: {fileID: 11400000, guid: c4e6362bd4782fb41bafebd83160530b, type: 2}
+  ExplicitModPool: {fileID: 11400000, guid: da07a4158cbeebb49a8ef59cac837141, type: 2}

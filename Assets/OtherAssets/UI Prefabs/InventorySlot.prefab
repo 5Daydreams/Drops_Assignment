@@ -168,7 +168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fe50b39960af9a41bba89559df0119f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slotInfo: {fileID: 3952869247977735828}
 --- !u!1 &3603944205857218831
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,6 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 3603944205989598546}
   item: {fileID: 0}
+  tooltipWindow: {fileID: 4849159677733077505}
   removeButton: {fileID: 3603944206558808698}
 --- !u!1 &3603944205989598556
 GameObject:

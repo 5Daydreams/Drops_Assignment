@@ -7,8 +7,9 @@ namespace BrackeysImport._Code.Inventory
     public class InventorySlot : MonoBehaviour
     {
         public Image icon;
-        [SerializeField] private InventoryItemBase item;
+        [SerializeField] private TooltipWindow tooltipWindow;
         [SerializeField] private Button removeButton;
+        private InventoryItemBase item;
 
         public void AddItem(InventoryItemBase newItem)
         {
@@ -19,6 +20,7 @@ namespace BrackeysImport._Code.Inventory
             icon.enabled = true;
 
             removeButton.interactable = true;
+            tooltipWindow.AdaptTooltip(item.GetTooltip());
         }
 
         public void ClearSlot()
@@ -27,6 +29,7 @@ namespace BrackeysImport._Code.Inventory
             icon.enabled = false;
 
             removeButton.interactable = false;
+            tooltipWindow.AdaptTooltip("Empty Slot");
         }
 
         public void OnRemoveButton()
