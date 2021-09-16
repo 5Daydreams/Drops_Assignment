@@ -16,7 +16,7 @@ MonoBehaviour:
   - ModValue: 6
     ModTargetStatTag: {fileID: 11400000, guid: faebd683d8bcb36409927425c8893a21, type: 2}
     ModOpTag: 0
-  - ModValue: 13
+  - ModValue: 12
     ModTargetStatTag: {fileID: 11400000, guid: 1d8e0052d915d8e419969d7af1c496d6, type: 2}
     ModOpTag: 0
   - ModValue: 5

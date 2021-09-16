@@ -5289,6 +5289,7 @@ MonoBehaviour:
   _canvas: {fileID: 1746733684}
   _tooltipText: {fileID: 1655660648}
   textPaddingSize: 4
+  screenPadding: 40
 --- !u!1 &1447475106
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: edcc14bae81e408baaae61f611a4a24d, type: 3}
-  m_Name: Wooden Hammer Base
+  m_Name: Lead Hammer Base
   m_EditorClassIdentifier: 
   EquipmentLocalValues:
-  - ModValue: 4
+  - ModValue: 10
     ModTargetStatTag: {fileID: 11400000, guid: faebd683d8bcb36409927425c8893a21, type: 2}
     ModOpTag: 0
-  - ModValue: 14
+  - ModValue: 22
     ModTargetStatTag: {fileID: 11400000, guid: 1d8e0052d915d8e419969d7af1c496d6, type: 2}
     ModOpTag: 0
   - ModValue: 5
@@ -29,4 +29,4 @@ MonoBehaviour:
     ModTargetStatTag: {fileID: 11400000, guid: a2e22b53251d5ee4599bfc2602706185, type: 2}
     ModOpTag: 0
   EquipmentSlot: {fileID: 11400000, guid: d65509ddad5a2c947ab349d04dfe3196, type: 2}
-  ExplicitModPool: {fileID: 11400000, guid: 459dd1a5553763c46ab626a2e6cb2d7c, type: 2}
+  ExplicitModPool: {fileID: 11400000, guid: d882ad2c0291b974486d3681f2eed6c6, type: 2}
