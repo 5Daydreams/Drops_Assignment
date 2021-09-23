@@ -16,6 +16,6 @@ MonoBehaviour:
   - MinModValue: 0.08
     MaxModValue: 0.16
     ModValue:
-      ModValue: 1.0396264
+      ModValue: 0.14559864
       ModTargetStatTag: {fileID: 11400000, guid: cec7548940f996a4eb14bdd2c0f4103c, type: 2}
       ModOpTag: 1

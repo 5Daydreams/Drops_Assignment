@@ -15,11 +15,11 @@ D:/FG_Projects/Drops_Assignment
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-64718
+58321
 Successfully changed project path to: D:/FG_Projects/Drops_Assignment
 D:/FG_Projects/Drops_Assignment
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 28.80 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 34.65 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.16f1 (049d6eca3c44)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/Resources/UnitySubsystems
@@ -39,365 +39,85 @@ Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,susp
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001574 seconds.
+Registered in 0.002697 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 26.47 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 39.60 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.743 seconds
+- Completed reload, in  2.816 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1743ms)
-		BeginReloadAssembly (50ms)
+	ReloadAssembly (2816ms)
+		BeginReloadAssembly (65ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (339ms)
-			LoadAssemblies (48ms)
+		EndReloadAssembly (533ms)
+			LoadAssemblies (63ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (118ms)
+			SetupTypeCache (191ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (29ms)
-			SetupLoadedEditorAssemblies (134ms)
+			RebuildScriptCaches (42ms)
+			SetupLoadedEditorAssemblies (205ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (3ms)
+				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (27ms)
-				BeforeProcessingInitializeOnLoad (12ms)
-				ProcessInitializeOnLoadAttributes (69ms)
-				ProcessInitializeOnLoadMethodAttributes (23ms)
+				RefreshPlugins (40ms)
+				BeforeProcessingInitializeOnLoad (16ms)
+				ProcessInitializeOnLoadAttributes (106ms)
+				ProcessInitializeOnLoadMethodAttributes (37ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.002114 seconds.
+Registered in 0.003658 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.32 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.36 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.901 seconds
+- Completed reload, in  1.386 seconds
 Domain Reload Profiling:
-	ReloadAssembly (902ms)
-		BeginReloadAssembly (118ms)
+	ReloadAssembly (1387ms)
+		BeginReloadAssembly (186ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
+			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (16ms)
-		EndReloadAssembly (735ms)
-			LoadAssemblies (67ms)
+			CreateAndSetChildDomain (21ms)
+		EndReloadAssembly (1123ms)
+			LoadAssemblies (110ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (216ms)
+			SetupTypeCache (335ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (43ms)
-			SetupLoadedEditorAssemblies (333ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (73ms)
-				ProcessInitializeOnLoadAttributes (245ms)
-				ProcessInitializeOnLoadMethodAttributes (4ms)
-				AfterProcessingInitializeOnLoad (6ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
-Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 0.31 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1576 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 76.9 MB.
-System memory in use after: 77.0 MB.
-
-Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 2015.
-Total: 2.317700 ms (FindLiveObjects: 0.153300 ms CreateObjectMapping: 0.059700 ms MarkObjects: 2.054700 ms  DeleteObjects: 0.049400 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  path: Assets/_Scriptables/Bases/Weapons/Axes/Rusted Hatchet Base.asset
-  artifactKey: Guid(982b3f538b75a5446b8bec0d6c92c1ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Scriptables/Bases/Weapons/Axes/Rusted Hatchet Base.asset using Guid(982b3f538b75a5446b8bec0d6c92c1ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37ab7bfebe314211604d02293ce1f728') in 0.023796 seconds 
-  Import took 0.025890 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000201 seconds.
-  path: Assets/_Scriptables/Bases/Weapons/Swords/Copper Sword Base.asset
-  artifactKey: Guid(149e59b33f2ece542adfc54fff5c7bd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Scriptables/Bases/Weapons/Swords/Copper Sword Base.asset using Guid(149e59b33f2ece542adfc54fff5c7bd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '951df119e824a684f4dfca874da9adb9') in 0.100361 seconds 
-  Import took 0.102343 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 16.388936 seconds.
-  path: Assets/_Scriptables/Bases/Weapons/Axes/Rusted Hatchet Base.asset
-  artifactKey: Guid(982b3f538b75a5446b8bec0d6c92c1ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Scriptables/Bases/Weapons/Axes/Rusted Hatchet Base.asset using Guid(982b3f538b75a5446b8bec0d6c92c1ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd6a7cced5a54478fa4a33150b1a38ae') in 0.004195 seconds 
-  Import took 0.006449 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 42.691191 seconds.
-  path: Assets/_Scriptables/Bases/Weapons/Axes/Rusted Hatchet Base.asset
-  artifactKey: Guid(982b3f538b75a5446b8bec0d6c92c1ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Scriptables/Bases/Weapons/Axes/Rusted Hatchet Base.asset using Guid(982b3f538b75a5446b8bec0d6c92c1ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a4b7e7fb364670d99740b016e23b878') in 0.004448 seconds 
-  Import took 0.006740 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.238499 seconds.
-  path: Assets/_Scriptables/Bases/Weapons/Swords/Copper Sword Base.asset
-  artifactKey: Guid(149e59b33f2ece542adfc54fff5c7bd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Scriptables/Bases/Weapons/Swords/Copper Sword Base.asset using Guid(149e59b33f2ece542adfc54fff5c7bd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c5097a35dc4c95dd87c4b430be9ab66') in 0.004245 seconds 
-  Import took 0.006279 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.936728 seconds.
-  path: Assets/_Scriptables/Bases/Weapons/Hammer/Wooden Hammer Base.asset
-  artifactKey: Guid(acfa7e8d43007ba4d8342de738c58b63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Scriptables/Bases/Weapons/Hammer/Wooden Hammer Base.asset using Guid(acfa7e8d43007ba4d8342de738c58b63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cd77b39d943c8724face0a8bbae85cd') in 0.004875 seconds 
-  Import took 0.007244 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.592189 seconds.
-  path: Assets/_Scriptables/Bases/Weapons/Axes/Rusted Hatchet Base 1.asset
-  artifactKey: Guid(e1a080c29b0064e48a30552208b9708b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Scriptables/Bases/Weapons/Axes/Rusted Hatchet Base 1.asset using Guid(e1a080c29b0064e48a30552208b9708b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65e755c6cef3b32feaf92d0d4f22ea0b') in 0.004222 seconds 
-  Import took 0.006542 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.891521 seconds.
-  path: Assets/_Scriptables/Bases/Weapons/Axes/Iron Hatchet Base.asset
-  artifactKey: Guid(e1a080c29b0064e48a30552208b9708b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Scriptables/Bases/Weapons/Axes/Iron Hatchet Base.asset using Guid(e1a080c29b0064e48a30552208b9708b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9252be539a8836cd1a09566182c3cccb') in 0.004521 seconds 
-  Import took 0.006667 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 15.006839 seconds.
-  path: Assets/_Scriptables/Bases/Weapons/Axes/Iron Hatchet Base.asset
-  artifactKey: Guid(e1a080c29b0064e48a30552208b9708b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Scriptables/Bases/Weapons/Axes/Iron Hatchet Base.asset using Guid(e1a080c29b0064e48a30552208b9708b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc6fda81bf54add92f434c7127359ffc') in 0.004154 seconds 
-  Import took 0.006370 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.336856 seconds.
-  path: Assets/_Scriptables/Bases/Weapons/Axes/Iron Hatchet Base.asset
-  artifactKey: Guid(e1a080c29b0064e48a30552208b9708b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Scriptables/Bases/Weapons/Axes/Iron Hatchet Base.asset using Guid(e1a080c29b0064e48a30552208b9708b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '351d895524751f72b2790e286c926eaf') in 0.005673 seconds 
-  Import took 0.008082 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.117854 seconds.
-  path: Assets/_Scriptables/Bases/Weapons/Swords/Copper Sword Base.asset
-  artifactKey: Guid(149e59b33f2ece542adfc54fff5c7bd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Scriptables/Bases/Weapons/Swords/Copper Sword Base.asset using Guid(149e59b33f2ece542adfc54fff5c7bd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4dbb23a454e90286f0d98352119bbd7') in 0.005601 seconds 
-  Import took 0.007905 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 14.030486 seconds.
-  path: Assets/_Scriptables/Bases/Weapons/Axes/Iron Hatchet Base.asset
-  artifactKey: Guid(e1a080c29b0064e48a30552208b9708b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Scriptables/Bases/Weapons/Axes/Iron Hatchet Base.asset using Guid(e1a080c29b0064e48a30552208b9708b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efb6c13f6c64179742f61afe8676fbfb') in 0.005121 seconds 
-  Import took 0.007602 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 14.159163 seconds.
-  path: Assets/_Scriptables/Bases/Weapons/Swords/Copper Sword Base.asset
-  artifactKey: Guid(149e59b33f2ece542adfc54fff5c7bd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Scriptables/Bases/Weapons/Swords/Copper Sword Base.asset using Guid(149e59b33f2ece542adfc54fff5c7bd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c4983d945fc57fbf288babc987bddcf') in 0.005604 seconds 
-  Import took 0.008004 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.232911 seconds.
-  path: Assets/_Scriptables/Bases/Weapons/Axes/Rusted Hatchet Base.asset
-  artifactKey: Guid(982b3f538b75a5446b8bec0d6c92c1ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Scriptables/Bases/Weapons/Axes/Rusted Hatchet Base.asset using Guid(982b3f538b75a5446b8bec0d6c92c1ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc60d546dfe1f235f6f9cf092fa6681f') in 0.003971 seconds 
-  Import took 0.006139 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 19.052060 seconds.
-  path: Assets/_Scriptables/Bases/Weapons/Swords/Copper Sword Base.asset
-  artifactKey: Guid(149e59b33f2ece542adfc54fff5c7bd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Scriptables/Bases/Weapons/Swords/Copper Sword Base.asset using Guid(149e59b33f2ece542adfc54fff5c7bd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3943a9d73bcd474e38b93835c31a04f0') in 0.005660 seconds 
-  Import took 0.008136 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.803257 seconds.
-  path: Assets/_Scriptables/Bases/Weapons/Axes/Iron Hatchet Base.asset
-  artifactKey: Guid(e1a080c29b0064e48a30552208b9708b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Scriptables/Bases/Weapons/Axes/Iron Hatchet Base.asset using Guid(e1a080c29b0064e48a30552208b9708b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74b87fd0b80a8c6982c025f5c408fdad') in 0.005782 seconds 
-  Import took 0.008179 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 13.955115 seconds.
-  path: Assets/_Scriptables/Bases/Weapons/Swords/Copper Sword Base.asset
-  artifactKey: Guid(149e59b33f2ece542adfc54fff5c7bd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Scriptables/Bases/Weapons/Swords/Copper Sword Base.asset using Guid(149e59b33f2ece542adfc54fff5c7bd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a481c81a02ba1feeeac1b333afb02cd3') in 0.006204 seconds 
-  Import took 0.008619 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.148753 seconds.
-  path: Assets/_Scriptables/Bases/Weapons/Hammer/Wooden Hammer Base 1.asset
-  artifactKey: Guid(1774091534346244a81b9733dfaba1eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Scriptables/Bases/Weapons/Hammer/Wooden Hammer Base 1.asset using Guid(1774091534346244a81b9733dfaba1eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7922e8b2ab4c63b309fcbd1e65f2a27b') in 0.005374 seconds 
-  Import took 0.007524 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.032557 seconds.
-  path: Assets/_Scriptables/Bases/Weapons/Hammer/Lead Hammer Base.asset
-  artifactKey: Guid(1774091534346244a81b9733dfaba1eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Scriptables/Bases/Weapons/Hammer/Lead Hammer Base.asset using Guid(1774091534346244a81b9733dfaba1eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5cfa0e4ea7eda3a34ab222c426de7561') in 0.005172 seconds 
-  Import took 0.007476 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.575947 seconds.
-  path: Assets/_Scriptables/Bases/Weapons/Hammer/Lead Hammer Base.asset
-  artifactKey: Guid(1774091534346244a81b9733dfaba1eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Scriptables/Bases/Weapons/Hammer/Lead Hammer Base.asset using Guid(1774091534346244a81b9733dfaba1eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb05325dafb4535c03d6f69b8ca0acbe') in 0.004844 seconds 
-  Import took 0.007136 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 14.191597 seconds.
-  path: Assets/_Scriptables/Bases/Weapons/Hammer/Lead Hammer Base.asset
-  artifactKey: Guid(1774091534346244a81b9733dfaba1eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Scriptables/Bases/Weapons/Hammer/Lead Hammer Base.asset using Guid(1774091534346244a81b9733dfaba1eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd53486665cb6fc1ca32175c4747f8e18') in 0.005023 seconds 
-  Import took 0.007291 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.599224 seconds.
-  path: Assets/_Scriptables/Bases/Weapons/Hammer/Lead Hammer Base.asset
-  artifactKey: Guid(1774091534346244a81b9733dfaba1eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Scriptables/Bases/Weapons/Hammer/Lead Hammer Base.asset using Guid(1774091534346244a81b9733dfaba1eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad696b52153e26a9988500407969d810') in 0.007314 seconds 
-  Import took 0.009847 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 48.477523 seconds.
-  path: Assets/_Prefabs/Weapons/Iron Hatchet Variant.prefab
-  artifactKey: Guid(a41bb9281eec71146ad140193aacf90e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Prefabs/Weapons/Iron Hatchet Variant.prefab using Guid(a41bb9281eec71146ad140193aacf90e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f72009d12afac31f13d6601a3c09484') in 0.076758 seconds 
-  Import took 0.079184 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 33.299191 seconds.
-  path: Assets/_Prefabs/Weapons/Lead Hammer Variant.prefab
-  artifactKey: Guid(5e3264a12664ad94387a467e0b4bb5b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Prefabs/Weapons/Lead Hammer Variant.prefab using Guid(5e3264a12664ad94387a467e0b4bb5b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27f6efcc61a948773f11133006afaaa3') in 0.014240 seconds 
-  Import took 0.016605 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.282291 seconds.
-  path: Assets/_Prefabs/Weapons/RustedHatchet Variant.prefab
-  artifactKey: Guid(1f77440516ee22a40be673f6f9a1b03e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Prefabs/Weapons/RustedHatchet Variant.prefab using Guid(1f77440516ee22a40be673f6f9a1b03e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e74e71c5a19082f8639ddae837e24be') in 0.010411 seconds 
-  Import took 0.012781 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.275756 seconds.
-  path: Assets/_Prefabs/Weapons/Rusted Sword Variant.prefab
-  artifactKey: Guid(16d1700a0c106d840a554423bc82630e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Prefabs/Weapons/Rusted Sword Variant.prefab using Guid(16d1700a0c106d840a554423bc82630e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83d98c0aac5b135f0f1ea07a8bd7b170') in 0.011638 seconds 
-  Import took 0.014337 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000414 seconds.
-  path: Assets/_Prefabs/Weapons/Rusted Sword Variant.prefab
-  artifactKey: Guid(16d1700a0c106d840a554423bc82630e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Prefabs/Weapons/Rusted Sword Variant.prefab using Guid(16d1700a0c106d840a554423bc82630e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83d98c0aac5b135f0f1ea07a8bd7b170') in 0.009918 seconds 
-  Import took 0.012111 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 25.046421 seconds.
-  path: Assets/_Scriptables/ItemCategories/Weapon.asset
-  artifactKey: Guid(f290a9c150bed894a8a5557dca986067) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Scriptables/ItemCategories/Weapon.asset using Guid(f290a9c150bed894a8a5557dca986067) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8fe7d8c7a9064f0952e1172de8f9635') in 0.013720 seconds 
-  Import took 0.016313 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003144 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.38 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.255 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1256ms)
-		BeginReloadAssembly (136ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (37ms)
-		EndReloadAssembly (1047ms)
-			LoadAssemblies (99ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (316ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (53ms)
-			SetupLoadedEditorAssemblies (462ms)
+			RebuildScriptCaches (65ms)
+			SetupLoadedEditorAssemblies (511ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (7ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (105ms)
-				ProcessInitializeOnLoadAttributes (337ms)
-				ProcessInitializeOnLoadMethodAttributes (5ms)
-				AfterProcessingInitializeOnLoad (8ms)
+				BeforeProcessingInitializeOnLoad (113ms)
+				ProcessInitializeOnLoadAttributes (373ms)
+				ProcessInitializeOnLoadMethodAttributes (6ms)
+				AfterProcessingInitializeOnLoad (11ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (8ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.38 ms, found 2 plugins.
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.40 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1540 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 77.0 MB.
-System memory in use after: 77.1 MB.
+Unloading 1576 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 77.3 MB.
+System memory in use after: 77.4 MB.
 
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2025.
-Total: 2.843900 ms (FindLiveObjects: 0.175100 ms CreateObjectMapping: 0.060800 ms MarkObjects: 2.589100 ms  DeleteObjects: 0.017400 ms)
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 2015.
+Total: 2.947900 ms (FindLiveObjects: 0.177700 ms CreateObjectMapping: 0.064100 ms MarkObjects: 2.626000 ms  DeleteObjects: 0.078700 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -410,4 +130,75 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/_Scriptables/EquipmentTags/Necklace 1.asset
+  artifactKey: Guid(ea144b4264e32a94e86b4ecbfd7f9e30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Scriptables/EquipmentTags/Necklace 1.asset using Guid(ea144b4264e32a94e86b4ecbfd7f9e30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e68d4f73016ebc3e652c4df1700c6f69') in 0.036906 seconds 
+  Import took 0.091153 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.265274 seconds.
+  path: Assets/_Scriptables/EquipmentTags/Piece of Poop.asset
+  artifactKey: Guid(ea144b4264e32a94e86b4ecbfd7f9e30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Scriptables/EquipmentTags/Piece of Poop.asset using Guid(ea144b4264e32a94e86b4ecbfd7f9e30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a04cf6594709c8ca5d900f5bd310310c') in 0.001902 seconds 
+  Import took 0.119813 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1445.446128 seconds.
+  path: Assets/_Code/_Tools/Editor/InspectorEditors/EquipmentStatsEditor.cs
+  artifactKey: Guid(61b27b7a124d4840bb258d3ceb148147) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Code/_Tools/Editor/InspectorEditors/EquipmentStatsEditor.cs using Guid(61b27b7a124d4840bb258d3ceb148147) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '295669e6c6f0fab6539e5a92ee180b6d') in 0.009211 seconds 
+  Import took 0.123643 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 164.793213 seconds.
+  path: Assets/_Code/AssignmentRelated/DropSystem/3_ItemBase/BaseTypeData/EquipmentBaseData.cs
+  artifactKey: Guid(edcc14bae81e408baaae61f611a4a24d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Code/AssignmentRelated/DropSystem/3_ItemBase/BaseTypeData/EquipmentBaseData.cs using Guid(edcc14bae81e408baaae61f611a4a24d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a200635462db5ab3bea80158eef1c42a') in 0.001737 seconds 
+  Import took 0.123821 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 98.242429 seconds.
+  path: Assets/_Scriptables/StatTags/CriticalChance.asset
+  artifactKey: Guid(380c381cdf57cb740bd98bbcee4bc8d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Scriptables/StatTags/CriticalChance.asset using Guid(380c381cdf57cb740bd98bbcee4bc8d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3d9186d12bf3fa50bb34343bbf6d980') in 0.002501 seconds 
+  Import took 0.377768 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 32.695830 seconds.
+  path: Assets/_Scriptables/StatTags/AttackSpeed.asset
+  artifactKey: Guid(cec7548940f996a4eb14bdd2c0f4103c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Scriptables/StatTags/AttackSpeed.asset using Guid(cec7548940f996a4eb14bdd2c0f4103c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5490e42f63295db72af2855564c4094f') in 0.001839 seconds 
+  Import took 0.147020 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 284.357118 seconds.
+  path: Assets/_Code/AssignmentRelated
+  artifactKey: Guid(d17b2b5f67d9440cb8a25a691dc16209) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Code/AssignmentRelated using Guid(d17b2b5f67d9440cb8a25a691dc16209) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '510e0dcbe76ffa6e185031b050a69206') in 0.001824 seconds 
+  Import took 0.427301 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/_Code/ControllerScripts
+  artifactKey: Guid(105b49eb2df89b149a98fa87c7b2f68b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Code/ControllerScripts using Guid(105b49eb2df89b149a98fa87c7b2f68b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd491069c1277b536246b5b252df0d7c6') in 0.001821 seconds 
+  Import took 0.047471 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.105713 seconds.
+  path: Assets/_Code/Objects
+  artifactKey: Guid(2770b99bbe0f4257896bfebfd22e9468) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Code/Objects using Guid(2770b99bbe0f4257896bfebfd22e9468) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93162681ab85da5e48f4074bce56726c') in 0.001620 seconds 
+  Import took 0.051212 seconds .
+
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

@@ -1,10 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using _Code.AssignmentRelated.DropSystem._3_ItemBase.BaseTypeData;
-using _Code.AssignmentRelated.StatSystem;
 using CodeMonkey.Utils;
-using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.UI;
 
